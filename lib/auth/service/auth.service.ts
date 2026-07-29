@@ -37,9 +37,7 @@ export class AuthenticationService {
       await UserRepository.create({
         email: input.email,
         password,
-        firstName: input.firstName,
-        lastName: input.lastName,
-      });
+        });
 
     await createSession({
       userId: user.id,

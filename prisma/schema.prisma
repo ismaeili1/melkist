@@ -34,19 +34,19 @@ model User {
   email    String @unique
   password String
 
-  firstName String?
-  lastName  String?
-  phone     String?
-  avatar    String?
-
   role UserRole @default(USER)
 
   properties Property[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  profile Profile?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 
   @@index([email])
+  @@index([role])
+  @@map("users")
 }
 
 model Property {
@@ -108,4 +108,57 @@ model PropertyImage {
   property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
 
   @@index([propertyId])
+}
+
+model Profile {
+  id            String    @id @default(cuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  firstName     String?   @db.VarChar(80)
+  lastName      String?   @db.VarChar(80)
+  displayName   String?   @db.VarChar(120)
+  phone         String?   @db.VarChar(30)
+  avatar        String?
+  coverImage    String?
+  bio           String?   @db.Text
+  birthDate     DateTime?
+  gender        Gender?
+  nationality   String?   @db.VarChar(80)
+  nationalCode  String?   @db.VarChar(30)
+  company       String?   @db.VarChar(150)
+  jobTitle      String?   @db.VarChar(150)
+  website       String?
+  linkedin      String?
+  instagram     String?
+  telegram      String?
+  whatsapp      String?
+  language      String    @default("fa")
+  timezone      String    @default("Asia/Tehran")
+  address       String?   @db.Text
+  city          String?   @db.VarChar(80)
+  province      String?   @db.VarChar(80)
+  country       String?   @default("Iran")
+  postalCode    String?   @db.VarChar(20)
+  latitude      Decimal?  @db.Decimal(10, 7)
+  longitude     Decimal?  @db.Decimal(10, 7)
+  isPublic      Boolean   @default(true)
+  isVerified    Boolean   @default(false)
+  isKycVerified Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+
+  @@index([city])
+  @@index([province])
+  @@index([country])
+  @@index([isPublic])
+  @@index([isVerified])
+  @@map("profiles")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
 }

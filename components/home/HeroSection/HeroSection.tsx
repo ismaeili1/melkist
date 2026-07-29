@@ -31,9 +31,9 @@ export function HeroSection() {
             <h1
               className={styles.title}
             >
-              مسیر هوشمندانه‌تری برای
+              مسیر هوشمندانه‌تر
               <span>
-                ملک و معماری
+                ملک + معماری
               </span>
             </h1>
 

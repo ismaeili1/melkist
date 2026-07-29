@@ -2,7 +2,7 @@
   margin-top: auto;
   padding: 64px 24px 24px;
   border-top: 1px solid #e5e3de;
-  background: #1f4d3a;
+  background: #333333;
   color: #ffffff;
   direction: rtl;
 }
@@ -54,7 +54,7 @@
 .column h3 {
   margin: 0 0 8px;
 
-  color: #c8a96b;
+  color: #ffffff;
 
   font-size: 0.95rem;
 }

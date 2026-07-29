@@ -1,0 +1,594 @@
+.gallery {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-4);
+
+  width: 100%;
+}
+
+
+/* ============================================================
+   MAIN IMAGE AREA
+   ============================================================ */
+
+.main {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  border-radius: var(--radius-xl);
+
+  background:
+    var(--color-surface-muted);
+
+  isolation: isolate;
+}
+
+
+/* ============================================================
+   GALLERY CONTROLS
+   ============================================================ */
+
+.controls {
+  position: absolute;
+
+  inset-inline: var(--space-4);
+
+  bottom: var(--space-4);
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: var(--space-2);
+
+  width: fit-content;
+
+  margin-inline: auto;
+
+  padding: var(--space-2);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.2);
+
+  border-radius: var(--radius-full);
+
+  background:
+    rgba(0, 0, 0, 0.58);
+
+  color:
+    var(--color-text-inverse);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+
+.counter {
+  min-width: 4rem;
+
+  padding-inline: var(--space-2);
+
+  text-align: center;
+
+  font-size:
+    var(--font-size-sm);
+
+  font-weight:
+    var(--font-weight-medium);
+
+  line-height: 1;
+
+  direction: ltr;
+
+  user-select: none;
+}
+
+
+/* ============================================================
+   THUMBNAILS
+   ============================================================ */
+
+.thumbnails {
+  display: flex;
+
+  gap: var(--space-3);
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  padding: var(--space-1);
+
+  scrollbar-width: thin;
+
+  overscroll-behavior-x: contain;
+
+  scroll-snap-type: x proximity;
+}
+
+
+.thumbnail {
+  flex: 0 0 auto;
+
+  position: relative;
+
+  width: 88px;
+
+  height: 64px;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  border: 2px solid
+    transparent;
+
+  border-radius: var(--radius-md);
+
+  background:
+    var(--color-surface-muted);
+
+  cursor: pointer;
+
+  scroll-snap-align: start;
+
+  transition:
+    border-color
+      var(--duration-normal)
+      var(--ease-standard),
+
+    opacity
+      var(--duration-normal)
+      var(--ease-standard),
+
+    transform
+      var(--duration-normal)
+      var(--ease-standard);
+}
+
+
+.thumbnail:hover {
+  opacity: 0.86;
+
+  transform: translateY(-1px);
+}
+
+
+.thumbnail:focus-visible {
+  outline: 3px solid
+    var(--color-info);
+
+  outline-offset: 3px;
+}
+
+
+.thumbnail img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.activeThumbnail {
+  border-color:
+    var(--color-primary);
+
+  opacity: 1;
+}
+
+
+.activeThumbnail::after {
+  position: absolute;
+
+  inset: 0;
+
+  content: "";
+
+  pointer-events: none;
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.45);
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.empty {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 280px;
+
+  padding: var(--space-6);
+
+  border: 1px dashed
+    var(--color-border);
+
+  border-radius: var(--radius-xl);
+
+  background:
+    var(--color-surface-muted);
+
+  color:
+    var(--color-text-secondary);
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+
+.lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: var(--z-modal);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: var(--space-6);
+
+  background:
+    rgba(0, 0, 0, 0.92);
+
+  animation:
+    galleryLightboxIn
+    var(--duration-normal)
+    var(--ease-standard);
+}
+
+
+.lightboxImage {
+  display: block;
+
+  max-width: min(
+    92vw,
+    1400px
+  );
+
+  max-height: 88vh;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: var(--radius-md);
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+.lightboxClose,
+.lightboxPrevious,
+.lightboxNext {
+  position: absolute;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: var(--touch-target-min);
+
+  height: var(--touch-target-min);
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.2);
+
+  border-radius: var(--radius-full);
+
+  background:
+    rgba(0, 0, 0, 0.55);
+
+  color:
+    var(--color-text-inverse);
+
+  font-size: 2rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background
+      var(--duration-normal)
+      var(--ease-standard),
+
+    transform
+      var(--duration-normal)
+      var(--ease-standard);
+}
+
+
+.lightboxClose:hover,
+.lightboxPrevious:hover,
+.lightboxNext:hover {
+  background:
+    rgba(0, 0, 0, 0.8);
+
+  transform: scale(1.04);
+}
+
+
+.lightboxClose:focus-visible,
+.lightboxPrevious:focus-visible,
+.lightboxNext:focus-visible {
+  outline: 3px solid
+    var(--color-info);
+
+  outline-offset: 3px;
+}
+
+
+.lightboxClose {
+  top: var(--space-6);
+
+  inset-inline-end: var(--space-6);
+
+  font-size: 2.25rem;
+}
+
+
+.lightboxPrevious {
+  inset-inline-start: var(--space-6);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+.lightboxNext {
+  inset-inline-end: var(--space-6);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+.lightboxPrevious:hover,
+.lightboxNext:hover {
+  transform:
+    translateY(-50%)
+    scale(1.04);
+}
+
+
+/* ============================================================
+   ANIMATION
+   ============================================================ */
+
+@keyframes galleryLightboxIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+
+@media (
+  max-width: 768px
+) {
+  .gallery {
+    gap: var(--space-3);
+  }
+
+
+  .main {
+    border-radius: var(--radius-lg);
+  }
+
+
+  .controls {
+    inset-inline: var(--space-3);
+
+    bottom: var(--space-3);
+  }
+
+
+  .thumbnail {
+    width: 76px;
+
+    height: 56px;
+  }
+
+
+  .lightbox {
+    padding: var(--space-4);
+  }
+
+
+  .lightboxImage {
+    max-width: 94vw;
+
+    max-height: 82vh;
+  }
+
+
+  .lightboxClose {
+    top: var(--space-4);
+
+    inset-inline-end: var(--space-4);
+  }
+
+
+  .lightboxPrevious {
+    inset-inline-start: var(--space-3);
+  }
+
+
+  .lightboxNext {
+    inset-inline-end: var(--space-3);
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (
+  max-width: 480px
+) {
+  .controls {
+    bottom: var(--space-2);
+
+    padding: var(--space-1);
+  }
+
+
+  .counter {
+    min-width: 3.5rem;
+
+    font-size:
+      var(--font-size-xs);
+  }
+
+
+  .thumbnail {
+    width: 68px;
+
+    height: 48px;
+
+    border-radius: var(--radius-sm);
+  }
+
+
+  .lightbox {
+    padding: var(--space-2);
+  }
+
+
+  .lightboxImage {
+    max-width: 96vw;
+
+    max-height: 78vh;
+  }
+
+
+  .lightboxClose {
+    top: var(--space-3);
+
+    inset-inline-end: var(--space-3);
+  }
+
+
+  .lightboxPrevious,
+  .lightboxNext {
+    width: 44px;
+
+    height: 44px;
+  }
+
+
+  .lightboxPrevious {
+    inset-inline-start: var(--space-2);
+  }
+
+
+  .lightboxNext {
+    inset-inline-end: var(--space-2);
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+  .thumbnail,
+  .lightboxClose,
+  .lightboxPrevious,
+  .lightboxNext {
+    transition: none;
+  }
+
+
+  .lightbox {
+    animation: none;
+  }
+}
+
+
+.controls button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: var(--touch-target-min);
+
+  min-height: var(--touch-target-min);
+
+  padding: var(--space-2);
+
+  border: 0;
+
+  border-radius: var(--radius-full);
+
+  background: transparent;
+
+  color: var(--color-text-inverse);
+
+  font-size: 1.5rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.controls button:focus-visible {
+  outline: 3px solid var(--color-info);
+
+  outline-offset: 2px;
+}

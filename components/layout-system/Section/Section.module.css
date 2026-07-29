@@ -1,0 +1,38 @@
+.section {
+  width: 100%;
+
+  padding-block:
+    var(--space-16);
+}
+
+.default {
+  background:
+    var(--color-background);
+}
+
+.muted {
+  background:
+    var(--color-surface-muted);
+}
+
+.brand {
+  background:
+    var(--color-primary);
+
+  color:
+    var(--color-text-inverse);
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding-block:
+      var(--space-12);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block:
+      var(--space-10);
+  }
+}

@@ -1,0 +1,227 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+  background: #1d1d1b;
+  color: #ffffff;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heading span {
+  color: #c8a96b;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.heading h2 {
+  max-width: 700px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.5;
+}
+
+.description {
+  max-width: 720px;
+  margin: 0;
+  color: #bcbab4;
+  line-height: 1.9;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.primaryButton,
+.secondaryButton,
+.submitButton {
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.primaryButton {
+  background: #c8a96b;
+  color: #ffffff;
+}
+
+.secondaryButton {
+  border: 1px solid #77746d;
+  background: transparent;
+  color: #ffffff;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.submitButton:hover {
+  opacity: 0.86;
+}
+
+.primaryButton:active,
+.secondaryButton:active,
+.submitButton:active {
+  transform: translateY(1px);
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(0 0 0 / 55%);
+}
+
+.modal {
+  width: min(100%, 560px);
+  max-height: min(90vh, 760px);
+  overflow-y: auto;
+  padding: 28px;
+  background: #f7f6f2;
+  color: #1d1d1b;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 25%);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.modalEyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #a0834c;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #dedcd6;
+  background: transparent;
+  color: #1d1d1b;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field span {
+  color: #57554f;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dedcd6;
+  border-radius: 0;
+  background: #ffffff;
+  color: #1d1d1b;
+  font: inherit;
+  outline: none;
+  padding: 13px 14px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #a0834c;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitButton {
+  width: 100%;
+  background: #1d1d1b;
+  color: #ffffff;
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.successState {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.successState strong {
+  font-size: 1.2rem;
+}
+
+.successState p {
+  margin: 0;
+  color: #77746d;
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 24px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .modal {
+    padding: 22px;
+  }
+}

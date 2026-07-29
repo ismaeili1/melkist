@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  AGENT
+  ADMIN
+}
+
+enum PropertyStatus {
+  SALE
+  RENT
+  MORTGAGE
+  SHORT_TERM
+}
+
+enum PropertyType {
+  APARTMENT
+  VILLA
+  LAND
+  COMMERCIAL
+  OFFICE
+  SHOP
+}
+
+model User {
+  id          String   @id @default(cuid())
+
+  email       String   @unique
+  password    String
+
+  firstName   String?
+  lastName    String?
+  phone       String?
+  avatar      String?
+
+  role        UserRole @default(USER)
+
+  properties  Property[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Property {
+
+  id          String          @id @default(cuid())
+
+  title       String
+  slug        String          @unique
+  description String
+
+  price       Decimal
+
+  area        Float
+
+  rooms       Int
+  bathrooms   Int
+
+  parking     Boolean
+
+  status      PropertyStatus
+  type        PropertyType
+
+  city        String
+  district    String
+  address     String
+
+  latitude    Float?
+  longitude   Float?
+
+  ownerId     String?
+  owner        User?          @relation(fields: [ownerId], references: [id])
+
+  images      PropertyImage[]
+
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([status])
+  @@index([type])
+  @@index([city])
+  @@index([price])
+  @@index([createdAt])
+  @@index([ownerId])
+
+  @@index([status, city])
+  @@index([type, price])
+  @@index([city, createdAt])
+}
+
+model PropertyImage {
+
+  id          String    @id @default(cuid())
+
+  url         String
+  alt         String?
+
+  order       Int
+
+  propertyId  String
+
+  property    Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+}

@@ -1,0 +1,38 @@
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+.melkist-container {
+  width: min(
+    calc(100% - 2rem),
+    var(--container-2xl)
+  );
+
+  margin-inline: auto;
+}
+
+.melkist-section {
+  padding-block: var(--space-16);
+}
+
+.melkist-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.melkist-row {
+  display: flex;
+  flex-direction: row;
+}

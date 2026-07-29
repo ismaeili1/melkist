@@ -1,0 +1,155 @@
+.header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: var(--space-8);
+
+  margin-bottom: var(--space-10);
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: var(--space-2);
+
+  color: var(--color-primary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.title {
+  margin: 0;
+
+  font-size: var(--font-size-3xl);
+
+  font-weight: var(--font-weight-bold);
+}
+
+.viewAll {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: var(--space-2);
+
+  color: var(--color-primary);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: var(--space-6);
+}
+
+.card {
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+}
+
+.image {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 220px;
+
+  background:
+    var(--color-surface-muted);
+
+  color:
+    var(--color-primary);
+
+  font-weight:
+    var(--font-weight-bold);
+}
+
+.content {
+  padding: var(--space-6);
+}
+
+.type {
+  color: var(--color-primary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.cardTitle {
+  margin:
+    var(--space-3)
+    0;
+
+  font-size: var(--font-size-lg);
+}
+
+.location,
+.details {
+  margin:
+    var(--space-2)
+    0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+}
+
+.footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: var(--space-4);
+
+  margin-top: var(--space-6);
+
+  padding-top: var(--space-4);
+
+  border-top:
+    1px solid
+    var(--color-border);
+}
+
+.cardLink {
+  color: var(--color-primary);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

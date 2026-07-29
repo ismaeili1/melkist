@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.transaction,
+.type,
+.featured {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.transaction {
+  background: #1d1d1b;
+  color: #ffffff;
+}
+
+.type {
+  background: #efefec;
+  color: #1d1d1b;
+}
+
+.featured {
+  background: #c8a96b;
+  color: #ffffff;
+}
+
+.title {
+  margin: 0;
+  color: #1d1d1b;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.location {
+  margin: 0;
+  color: #77746d;
+  font-size: 1rem;
+}

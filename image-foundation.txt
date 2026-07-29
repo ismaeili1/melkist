@@ -1,0 +1,379 @@
+﻿
+==============================
+C:\Projects\melkist\components\ui\Image\Avatar.tsx
+==============================
+import {
+  Image,
+} from "./Image";
+
+export interface AvatarProps {
+  src?: string;
+
+  alt: string;
+
+  size?: number;
+
+  fallback?: string;
+}
+
+export function Avatar({
+  src,
+  alt,
+  size = 48,
+  fallback,
+}: AvatarProps) {
+  if (!src) {
+    return (
+      <div
+        style={{
+          width: size,
+
+          height: size,
+
+          borderRadius:
+            "var(--radius-full)",
+
+          display: "flex",
+
+          alignItems: "center",
+
+          justifyContent: "center",
+
+          background:
+            "var(--color-surface-muted)",
+
+          color:
+            "var(--color-text-secondary)",
+        }}
+        role="img"
+        aria-label={alt}
+      >
+        {alt.charAt(0)}
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={size}
+      height={size}
+      aspectRatio="1 / 1"
+      fit="cover"
+      fallback={fallback}
+    />
+  );
+}
+
+==============================
+C:\Projects\melkist\components\ui\Image\Image.module.css
+==============================
+.wrapper {
+  position: relative;
+
+  display: block;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  background:
+    var(--color-surface-muted);
+}
+
+.image {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  opacity: 0;
+
+  transition:
+    opacity
+    var(--motion-duration-normal)
+    var(--motion-ease-standard);
+}
+
+.cover .image {
+  object-fit: cover;
+}
+
+.contain .image {
+  object-fit: contain;
+}
+
+.fill .image {
+  object-fit: fill;
+}
+
+.none .image {
+  object-fit: none;
+}
+
+==============================
+C:\Projects\melkist\components\ui\Image\Image.tsx
+==============================
+"use client";
+
+import {
+  useState,
+} from "react";
+
+import type {
+  ImgHTMLAttributes,
+} from "react";
+
+import styles from "./Image.module.css";
+
+export type ImageFit =
+  | "cover"
+  | "contain"
+  | "fill"
+  | "none";
+
+export interface ImageProps
+  extends Omit<
+    ImgHTMLAttributes<HTMLImageElement>,
+    "width" | "height"
+  > {
+  src: string;
+
+  alt: string;
+
+  width?: number | string;
+
+  height?: number | string;
+
+  fit?: ImageFit;
+
+  aspectRatio?: string;
+
+  fallback?: string;
+
+  showPlaceholder?: boolean;
+}
+
+export function Image({
+  src,
+  alt,
+  width,
+  height,
+  fit = "cover",
+  aspectRatio,
+  fallback,
+  showPlaceholder = true,
+  className,
+  style,
+  onError,
+  onLoad,
+  ...props
+}: ImageProps) {
+  const [
+    status,
+    setStatus,
+  ] = useState<
+    "loading" | "loaded" | "error"
+  >("loading");
+
+  const [
+    currentSrc,
+    setCurrentSrc,
+  ] = useState(src);
+
+  function handleLoad(
+    event: React.SyntheticEvent<HTMLImageElement>
+  ) {
+    setStatus("loaded");
+
+    onLoad?.(event);
+  }
+
+  function handleError(
+    event: React.SyntheticEvent<HTMLImageElement>
+  ) {
+    if (
+      fallback &&
+      currentSrc !== fallback
+    ) {
+      setCurrentSrc(fallback);
+
+      setStatus("loading");
+
+      return;
+    }
+
+    setStatus("error");
+
+    onError?.(event);
+  }
+
+  return (
+    <div
+      className={[
+        styles.wrapper,
+
+        styles[fit],
+
+        className ?? "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={{
+        width,
+
+        height,
+
+        aspectRatio,
+
+        ...style,
+      }}
+    >
+      {status === "loading" &&
+        showPlaceholder && (
+          <div
+            className={
+              styles.placeholder
+            }
+          />
+        )}
+
+      {status === "error" ? (
+        <div
+          className={styles.error}
+          role="img"
+          aria-label={alt}
+        >
+          طھطµظˆغŒط± ط¯ط± ط¯ط³طھط±ط³ ظ†غŒط³طھ
+        </div>
+      ) : (
+        <img
+          src={currentSrc}
+          alt={alt}
+          className={[
+            styles.image,
+
+            status === "loaded"
+              ? styles.loaded
+              : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          onLoad={handleLoad}
+          onError={handleError}
+          {...props}
+        />
+      )}
+    </div>
+  );
+}
+
+==============================
+C:\Projects\melkist\components\ui\Image\ImageError.tsx
+==============================
+export interface ImageErrorProps {
+  alt?: string;
+}
+
+export function ImageError({
+  alt = "طھطµظˆغŒط± ط¯ط± ط¯ط³طھط±ط³ ظ†غŒط³طھ",
+}: ImageErrorProps) {
+  return (
+    <div
+      role="img"
+      aria-label={alt}
+    >
+      طھطµظˆغŒط± ط¯ط± ط¯ط³طھط±ط³ ظ†غŒط³طھ
+    </div>
+  );
+}
+
+==============================
+C:\Projects\melkist\components\ui\Image\ImagePlaceholder.tsx
+==============================
+export interface ImagePlaceholderProps {
+  label?: string;
+}
+
+export function ImagePlaceholder({
+  label = "ط¯ط± ط­ط§ظ„ ط¨ط§ط±ع¯ط°ط§ط±غŒ طھطµظˆغŒط±...",
+}: ImagePlaceholderProps) {
+  return (
+    <div
+      role="status"
+      aria-label={label}
+    />
+  );
+}
+
+==============================
+C:\Projects\melkist\components\ui\Image\index.ts
+==============================
+export {
+  Image,
+} from "./Image";
+
+export {
+  Avatar,
+} from "./Avatar";
+
+export {
+  PropertyImage,
+} from "./PropertyImage";
+
+export {
+  ImagePlaceholder,
+} from "./ImagePlaceholder";
+
+export {
+  ImageError,
+} from "./ImageError";
+
+export type {
+  ImageProps,
+  ImageFit,
+} from "./Image";
+
+export type {
+  AvatarProps,
+} from "./Avatar";
+
+export type {
+  PropertyImageProps,
+} from "./PropertyImage";
+
+==============================
+C:\Projects\melkist\components\ui\Image\PropertyImage.tsx
+==============================
+import {
+  Image,
+} from "./Image";
+
+export interface PropertyImageProps {
+  src: string;
+
+  alt?: string;
+
+  aspectRatio?: string;
+
+  className?: string;
+}
+
+export function PropertyImage({
+  src,
+  alt = "طھطµظˆغŒط± ظ…ظ„ع©",
+  aspectRatio = "16 / 10",
+  className,
+}: PropertyImageProps) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      aspectRatio={aspectRatio}
+      fit="cover"
+      className={className}
+    />
+  );
+}

@@ -1,0 +1,214 @@
+.text {
+  margin: 0;
+
+  font-family: inherit;
+
+  text-wrap: pretty;
+}
+
+
+/*
+============================================================
+DISPLAY
+============================================================
+*/
+
+.display {
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+}
+
+
+/*
+============================================================
+HEADINGS
+============================================================
+*/
+
+.h1 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+.h2 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+.h3 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-semibold);
+}
+
+.h4 {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/*
+============================================================
+BODY
+============================================================
+*/
+
+.body {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+}
+
+.body-sm {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+
+/*
+============================================================
+CAPTION / LABEL
+============================================================
+*/
+
+.caption {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.overline {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/*
+============================================================
+WEIGHT
+============================================================
+*/
+
+.weight-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+
+/*
+============================================================
+ALIGN
+============================================================
+*/
+
+.align-start {
+  text-align: start;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-end {
+  text-align: end;
+}
+
+
+/*
+============================================================
+TONES
+============================================================
+*/
+
+.tone-primary {
+  color: var(--color-text-primary);
+}
+
+.tone-secondary {
+  color: var(--color-text-secondary);
+}
+
+.tone-muted {
+  color: var(--color-text-muted);
+}
+
+.tone-inverse {
+  color: var(--color-text-inverse);
+}
+
+.tone-brand {
+  color: var(--color-primary);
+}
+
+.tone-accent {
+  color: var(--color-accent);
+}
+
+.tone-error {
+  color: var(--color-error);
+}
+
+.tone-success {
+  color: var(--color-success);
+}
+
+
+/*
+============================================================
+LINE CLAMP
+============================================================
+*/
+
+.line-clamp-1,
+.line-clamp-2,
+.line-clamp-3,
+.line-clamp-4,
+.line-clamp-5 {
+  display: -webkit-box;
+
+  overflow: hidden;
+
+  -webkit-box-orient: vertical;
+}
+
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+  -webkit-line-clamp: 4;
+}
+
+.line-clamp-5 {
+  -webkit-line-clamp: 5;
+}

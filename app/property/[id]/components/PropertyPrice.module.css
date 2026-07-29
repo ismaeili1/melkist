@@ -1,0 +1,24 @@
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  background: #1d1d1b;
+  color: #ffffff;
+}
+
+.label {
+  color: #c8a96b;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.price {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.note {
+  color: #bcbab4;
+  font-size: 0.75rem;
+}

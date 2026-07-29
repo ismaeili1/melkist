@@ -1,0 +1,86 @@
+.panel {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.header h1 {
+  margin: 0 0 12px;
+}
+
+.header p {
+  margin: 0;
+  line-height: 1.9;
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  cursor: pointer;
+}
+
+.toggleRow span {
+  display: grid;
+  gap: 8px;
+}
+
+.toggleRow small {
+  line-height: 1.7;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field select {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: white;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.actions button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.success {
+  font-size: 14px;
+}
+
+.loading {
+  padding: 40px 24px;
+}

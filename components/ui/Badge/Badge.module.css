@@ -1,0 +1,194 @@
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: var(--space-1);
+
+  width: fit-content;
+
+  border: 1px solid transparent;
+
+  border-radius: var(--radius-sm);
+
+  font-family: inherit;
+
+  font-weight: var(--font-weight-medium);
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.content {
+  display: inline-flex;
+
+  align-items: center;
+}
+
+
+/*
+============================================================
+SIZES
+============================================================
+*/
+
+.sm {
+  min-height: 24px;
+
+  padding-inline: var(--space-2);
+
+  font-size: var(--font-size-xs);
+}
+
+.md {
+  min-height: 28px;
+
+  padding-inline: var(--space-3);
+
+  font-size: var(--font-size-sm);
+}
+
+.lg {
+  min-height: 34px;
+
+  padding-inline: var(--space-4);
+
+  font-size: var(--font-size-md);
+}
+
+
+/*
+============================================================
+PILL
+============================================================
+*/
+
+.pill {
+  border-radius: var(--radius-full);
+}
+
+
+/*
+============================================================
+NEUTRAL
+============================================================
+*/
+
+.neutral {
+  border-color: var(--color-border);
+
+  background: var(--color-surface-muted);
+
+  color: var(--color-text-secondary);
+}
+
+
+/*
+============================================================
+PRIMARY
+============================================================
+*/
+
+.primary {
+  border-color: var(--color-primary);
+
+  background: var(--color-primary);
+
+  color: var(--color-text-inverse);
+}
+
+
+/*
+============================================================
+SUCCESS
+============================================================
+*/
+
+.success {
+  border-color: var(--color-success);
+
+  background: color-mix(
+    in srgb,
+    var(--color-success) 12%,
+    var(--color-surface)
+  );
+
+  color: var(--color-success);
+}
+
+
+/*
+============================================================
+WARNING
+============================================================
+*/
+
+.warning {
+  border-color: var(--color-warning);
+
+  background: color-mix(
+    in srgb,
+    var(--color-warning) 12%,
+    var(--color-surface)
+  );
+
+  color: var(--color-warning);
+}
+
+
+/*
+============================================================
+ERROR
+============================================================
+*/
+
+.error {
+  border-color: var(--color-error);
+
+  background: color-mix(
+    in srgb,
+    var(--color-error) 12%,
+    var(--color-surface)
+  );
+
+  color: var(--color-error);
+}
+
+
+/*
+============================================================
+INFO
+============================================================
+*/
+
+.info {
+  border-color: var(--color-info);
+
+  background: color-mix(
+    in srgb,
+    var(--color-info) 12%,
+    var(--color-surface)
+  );
+
+  color: var(--color-info);
+}
+
+
+/*
+============================================================
+ICONS
+============================================================
+*/
+
+.icon {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+}

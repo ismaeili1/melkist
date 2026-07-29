@@ -1,0 +1,56 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading span {
+  color: #a0834c;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.heading h2 {
+  margin: 0;
+  color: #1d1d1b;
+  font-size: 1.6rem;
+}
+
+.locationCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.address strong {
+  color: #1d1d1b;
+  font-size: 1.1rem;
+}
+
+.address span {
+  color: #77746d;
+}
+
+.mapPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  padding: 32px;
+  background: #e9e8e3;
+  color: #77746d;
+  text-align: center;
+}

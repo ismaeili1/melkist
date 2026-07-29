@@ -1,0 +1,279 @@
+.page {
+  min-height: 100vh;
+  background: #f8f8f6;
+  direction: rtl;
+}
+
+.main {
+  padding: 48px 24px 100px;
+}
+
+.container {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  color: #888;
+  font-size: 0.82rem;
+}
+
+.breadcrumb strong {
+  color: #1f4d3a;
+  font-weight: 700;
+}
+
+.detailLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.visualColumn {
+  min-width: 0;
+}
+
+.galleryWrapper {
+  position: relative;
+  min-width: 0;
+}
+
+.galleryWrapper > span {
+  z-index: 2;
+}
+
+
+.featuredBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  padding: 8px 16px;
+  background: #c8a96b;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+
+
+.featuredBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background: #c8a96b;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.infoColumn {
+  padding: 32px;
+  border: 1px solid #e5e3de;
+  background: #ffffff;
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.meta span {
+  color: #1f4d3a;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.meta span + span::before {
+  content: "•";
+  margin-left: 10px;
+  color: #c8a96b;
+}
+
+.title {
+  margin: 0 0 16px;
+  color: #1f4d3a;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.4;
+}
+
+.location {
+  margin: 0;
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.divider {
+  height: 1px;
+  margin: 28px 0;
+  background: #eeeeee;
+}
+
+.specifications {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.specification {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid #eeeeee;
+}
+
+.specificationLabel {
+  color: #888;
+  font-size: 0.78rem;
+}
+
+.specification strong {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+  padding: 20px;
+  background: #f5f2eb;
+}
+
+.priceBox span {
+  color: #777;
+  font-size: 0.82rem;
+}
+
+.priceBox strong {
+  color: #1f4d3a;
+  font-size: 1.25rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 52px;
+  padding: 0 20px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.primaryButton {
+  border: 1px solid #1f4d3a;
+  background: #1f4d3a;
+  color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: #163a2c;
+}
+
+.secondaryButton {
+  border: 1px solid #1f4d3a;
+  background: #ffffff;
+  color: #1f4d3a;
+}
+
+.secondaryButton:hover {
+  background: #1f4d3a;
+  color: #ffffff;
+}
+
+.descriptionSection,
+.locationSection {
+  margin-top: 56px;
+  padding: 36px;
+  border: 1px solid #e5e3de;
+  background: #ffffff;
+}
+
+.sectionHeading {
+  margin-bottom: 20px;
+}
+
+.sectionHeading span {
+  display: block;
+  margin-bottom: 8px;
+  color: #c8a96b;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  direction: ltr;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #1f4d3a;
+  font-size: 1.5rem;
+}
+
+.descriptionSection p {
+  max-width: 850px;
+  margin: 0;
+  color: #666;
+  line-height: 2;
+}
+
+.mapPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  border: 1px dashed #c8a96b;
+  background: #faf9f6;
+  color: #777;
+  text-align: center;
+  line-height: 2;
+}
+
+@media (max-width: 960px) {
+  .detailLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .infoColumn {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 32px 16px 72px;
+  }
+
+  .infoColumn {
+    padding: 22px;
+  }
+
+  .specifications {
+    grid-template-columns: 1fr;
+  }
+
+  .descriptionSection,
+  .locationSection {
+    padding: 24px;
+  }
+}

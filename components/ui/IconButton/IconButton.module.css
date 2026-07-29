@@ -1,0 +1,165 @@
+.iconButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition:
+    background-color var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-normal) var(--ease-standard);
+}
+
+.iconButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.iconButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.iconButton:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 3px;
+}
+
+.iconButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+
+/*
+============================================================
+SIZES
+============================================================
+*/
+
+.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+}
+
+.lg {
+  width: 48px;
+  height: 48px;
+}
+
+
+/*
+============================================================
+ICON
+============================================================
+*/
+
+.icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 1.25rem;
+  height: 1.25rem;
+
+  line-height: 0;
+}
+
+
+/*
+============================================================
+PRIMARY
+============================================================
+*/
+
+.primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+
+/*
+============================================================
+SECONDARY
+============================================================
+*/
+
+.secondary {
+  background: var(--color-brand-gray-light);
+  color: var(--color-text-primary);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--color-brand-gray);
+}
+
+
+/*
+============================================================
+GHOST
+============================================================
+*/
+
+.ghost {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+}
+
+
+/*
+============================================================
+OUTLINE
+============================================================
+*/
+
+.outline {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+}
+
+
+/*
+============================================================
+DANGER
+============================================================
+*/
+
+.danger {
+  background: var(--color-error);
+  color: var(--color-text-inverse);
+}
+
+.danger:hover:not(:disabled) {
+  background: #b71c1c;
+}

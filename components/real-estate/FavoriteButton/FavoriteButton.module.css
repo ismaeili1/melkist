@@ -1,0 +1,45 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #d8d5ce;
+  background: #ffffff;
+  color: #1d1d1b;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.button:hover {
+  border-color: #a0834c;
+}
+
+.icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.saved {
+  border-color: #c8a96b;
+  background: #fbf8f0;
+  color: #a0834c;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .button {
+    width: 100%;
+  }
+}

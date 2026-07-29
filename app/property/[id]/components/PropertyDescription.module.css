@@ -1,0 +1,45 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading span {
+  color: #a0834c;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.heading h2 {
+  margin: 0;
+  color: #1d1d1b;
+  font-size: 1.6rem;
+}
+
+.description {
+  max-width: 850px;
+  margin: 0;
+  color: #57554f;
+  font-size: 1rem;
+  line-height: 2.1;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.amenity {
+  padding: 9px 14px;
+  border: 1px solid #dedcd6;
+  color: #57554f;
+  font-size: 0.85rem;
+}

@@ -24,6 +24,17 @@ const CURRENT_USER_SELECT = {
   createdAt: true,
 } as const;
 
+const SESSION_DEVICE_SELECT = {
+  id: true,
+  deviceName: true,
+  deviceType: true,
+  platform: true,
+  browser: true,
+  os: true,
+  city: true,
+  country: true,
+} as const;
+
 export class SessionRepository extends BaseRepository {
   async create(data: CreateSessionInput): Promise<Session> {
     return this.prisma.session.create({ data });
@@ -56,6 +67,24 @@ export class SessionRepository extends BaseRepository {
     return this.prisma.session.findMany({
       where: { userId },
       orderBy: { createdAt: "desc" },
+    });
+  }
+
+  /**
+   * Active (non-revoked, non-expired) sessions for a user, with the
+   * owning device's info attached - used to render "where you're
+   * logged in" lists.
+   */
+  async findActiveByUser(userId: string) {
+    return this.prisma.session.findMany({
+      where: {
+        userId,
+        status: SessionStatus.ACTIVE,
+        revoked: false,
+        expiresAt: { gt: new Date() },
+      },
+      include: { device: { select: SESSION_DEVICE_SELECT } },
+      orderBy: { lastActivityAt: "desc" },
     });
   }
 

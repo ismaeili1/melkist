@@ -9,8 +9,10 @@ export enum Action {
 export enum Resource {
   Profile = "profile",
   Property = "property",
+  Favorite = "favorite",
   User = "user",
   Session = "session",
+  Admin = "admin",
 }
 
 export interface Permission {

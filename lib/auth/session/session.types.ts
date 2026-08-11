@@ -1,6 +1,12 @@
+import { UserRole } from "@prisma/client";
+
 export interface UserSession {
   userId: string;
   email: string;
-  role: "USER" | "AGENT" | "ADMIN";
+  role: UserRole;
   createdAt: Date;
+}
+
+export interface PersistedUserSession extends UserSession {
+  id: string;
 }

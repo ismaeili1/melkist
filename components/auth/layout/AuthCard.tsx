@@ -1,20 +1,14 @@
-"use client";
+import type { ReactNode } from "react";
+import styles from "../styles/card.module.css";
 
-import { ReactNode } from "react";
-import styles from "./AuthCard.module.css";
-
-interface AuthCardProps {
+interface Props {
   children: ReactNode;
-  className?: string;
 }
 
-export default function AuthCard({
-  children,
-  className = "",
-}: AuthCardProps) {
+export default function AuthCard({ children }: Props) {
   return (
-    <div className={`${styles.card} ${className}`}>
+    <section className={styles.card}>
       {children}
-    </div>
+    </section>
   );
 }

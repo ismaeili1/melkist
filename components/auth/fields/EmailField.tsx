@@ -1,40 +1,26 @@
-"use client";
-
-import styles from "./Input.module.css";
-
-interface EmailInputProps {
+interface EmailFieldProps {
   value: string;
   onChange: (value: string) => void;
-  error?: string;
 }
 
-export default function EmailInput({
+export default function EmailField({
   value,
   onChange,
-  error,
-}: EmailInputProps) {
+}: EmailFieldProps) {
   return (
-    <div className={styles.field}>
-
-      <label className={styles.label}>
+    <div className="field">
+      <label htmlFor="email">
         ایمیل
       </label>
 
       <input
-        className={`${styles.input} ${error ? styles.errorInput : ""}`}
+        id="email"
         type="email"
         autoComplete="email"
-        placeholder="example@email.com"
         value={value}
+        placeholder="example@email.com"
         onChange={(e) => onChange(e.target.value)}
       />
-
-      {error && (
-        <span className={styles.error}>
-          {error}
-        </span>
-      )}
-
     </div>
   );
 }

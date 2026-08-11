@@ -1,16 +1,12 @@
 import { redirect } from "next/navigation";
-
-import {
-  getSession,
-} from "../session";
+import { getCurrentUser } from "@/lib/auth/session/runtime/get-current-user";
 
 export async function requireAuth() {
-  const session =
-    await getSession();
+  const user = await getCurrentUser();
 
-  if (!session) {
+  if (!user) {
     redirect("/login");
   }
 
-  return session;
+  return user;
 }

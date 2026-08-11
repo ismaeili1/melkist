@@ -1,142 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
-import EmailInput from "../EmailInput";
-import PasswordInput from "../PasswordInput";
-import SubmitButton from "../SubmitButton";
-
-import styles from "./LoginForm.module.css";
+import EmailField from "../fields/EmailField";
+import PasswordField from "../fields/PasswordField";
+import SubmitButton from "../buttons/SubmitButton";
 
 export default function LoginForm() {
+  const [email, setEmail] = useState("");
 
-    const router = useRouter();
+  const [password, setPassword] = useState("");
 
-    const [email,setEmail]=useState("");
+  function handleSubmit(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
+    e.preventDefault();
 
-    const [password,setPassword]=useState("");
+    console.log({
+      email,
+      password,
+    });
+  }
 
-    const [loading,setLoading]=useState(false);
+  return (
+    <form onSubmit={handleSubmit}>
 
-    const [error,setError]=useState("");
+      <h1>ورود به MELKIST</h1>
 
-    async function handleSubmit(
-        e:React.FormEvent
-    ){
+      <EmailField
+        value={email}
+        onChange={setEmail}
+      />
 
-        e.preventDefault();
+      <PasswordField
+        value={password}
+        onChange={setPassword}
+      />
 
-        setError("");
+      <SubmitButton
+        title="ورود"
+      />
 
-        setLoading(true);
-
-        try{
-
-            const response=await fetch("/api/auth/login",{
-
-                method:"POST",
-
-                headers:{
-                    "Content-Type":"application/json"
-                },
-
-                body:JSON.stringify({
-
-                    email,
-
-                    password
-
-                })
-
-            });
-
-            const data=await response.json();
-
-            if(!response.ok){
-
-                setError(
-
-                    data.message ??
-
-                    "ورود انجام نشد."
-
-                );
-
-                return;
-
-            }
-
-            router.push("/dashboard");
-
-            router.refresh();
-
-        }
-
-        catch{
-
-            setError(
-
-                "ارتباط با سرور برقرار نشد."
-
-            );
-
-        }
-
-        finally{
-
-            setLoading(false);
-
-        }
-
-    }
-
-    return(
-
-        <form
-
-            onSubmit={handleSubmit}
-
-            className={styles.form}
-
-        >
-
-            <EmailInput
-
-                value={email}
-
-                onChange={setEmail}
-
-            />
-
-            <PasswordInput
-
-                value={password}
-
-                onChange={setPassword}
-
-            />
-
-            {error &&
-
-                <div className={styles.errorBox}>
-
-                    {error}
-
-                </div>
-
-            }
-
-            <SubmitButton
-
-                title="ورود"
-
-                loading={loading}
-
-            />
-
-        </form>
-
-    );
-
+    </form>
+  );
 }

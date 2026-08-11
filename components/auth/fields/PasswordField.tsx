@@ -1,55 +1,26 @@
-"use client";
-
-import { useState } from "react";
-import styles from "./Input.module.css";
-
-interface PasswordInputProps {
-  label?: string;
+interface PasswordFieldProps {
   value: string;
   onChange: (value: string) => void;
-  error?: string;
-  autoComplete?: string;
 }
 
-export default function PasswordInput({
-  label = "رمز عبور",
+export default function PasswordField({
   value,
   onChange,
-  error,
-  autoComplete = "current-password",
-}: PasswordInputProps) {
-  const [showPassword, setShowPassword] = useState(false);
-
+}: PasswordFieldProps) {
   return (
-    <div className={styles.field}>
-      <label className={styles.label}>
-        {label}
+    <div className="field">
+      <label htmlFor="password">
+        رمز عبور
       </label>
 
-      <div className={styles.passwordWrapper}>
-        <input
-          className={`${styles.input} ${error ? styles.errorInput : ""}`}
-          type={showPassword ? "text" : "password"}
-          autoComplete={autoComplete}
-          value={value}
-          placeholder="••••••••"
-          onChange={(e) => onChange(e.target.value)}
-        />
-
-        <button
-          type="button"
-          className={styles.toggleButton}
-          onClick={() => setShowPassword((v) => !v)}
-        >
-          {showPassword ? "🙈" : "👁"}
-        </button>
-      </div>
-
-      {error && (
-        <span className={styles.error}>
-          {error}
-        </span>
-      )}
+      <input
+        id="password"
+        type="password"
+        autoComplete="current-password"
+        value={value}
+        placeholder="رمز عبور"
+        onChange={(e) => onChange(e.target.value)}
+      />
     </div>
   );
 }

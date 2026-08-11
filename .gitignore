@@ -34,3 +34,6 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+# --- added by cleanup stage (post v2.4.2) ---
+_archive/
+*.bak

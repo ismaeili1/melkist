@@ -1,36 +1,10 @@
-"use client";
-
 import Link from "next/link";
-import styles from "./AuthLogo.module.css";
+import styles from "../styles/logo.module.css";
 
-interface AuthLogoProps {
-  showSubtitle?: boolean;
-}
-
-export default function AuthLogo({
-  showSubtitle = true,
-}: AuthLogoProps) {
+export default function AuthLogo() {
   return (
-    <Link href="/" className={styles.logoWrapper}>
-
-      <div className={styles.logoIcon}>
-        M
-      </div>
-
-      <div className={styles.textArea}>
-
-        <h2 className={styles.title}>
-          MELKIST
-        </h2>
-
-        {showSubtitle && (
-          <span className={styles.subtitle}>
-            Smart Real Estate Platform
-          </span>
-        )}
-
-      </div>
-
+    <Link href="/" className={styles.logo}>
+      MELKIST
     </Link>
   );
 }

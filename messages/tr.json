@@ -1,0 +1,16 @@
+{
+  "common": { "siteName": "Melkist" },
+  "nav": {
+    "home": "Ana Sayfa",
+    "buySell": "Alım Satım",
+    "rent": "Kiralama ve İpotek",
+    "investment": "Ortaklık ve Yatırım",
+    "consulting": "Danışmanlık Hizmetleri",
+    "architecture": "Mimarlık ve İnşaat Hizmetleri",
+    "projects": "Projeler",
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "dashboard": "Panel",
+    "favorites": "Favoriler"
+  }
+}

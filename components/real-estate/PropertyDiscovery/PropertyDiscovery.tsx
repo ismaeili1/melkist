@@ -7,7 +7,7 @@ import {
 
 import {
   propertyResults,
-} from "@/app/property/property-data";
+} from "@/app/[locale]/property/property-data";
 
 import {
   PropertyCard,

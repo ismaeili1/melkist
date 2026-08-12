@@ -1,0 +1,16 @@
+{
+  "common": { "siteName": "Melkist" },
+  "nav": {
+    "home": "Home",
+    "buySell": "Buy & Sell",
+    "rent": "Rent & Mortgage",
+    "investment": "Partnership & Investment",
+    "consulting": "Consulting Services",
+    "architecture": "Architecture & Construction",
+    "projects": "Projects",
+    "login": "Log In",
+    "register": "Sign Up",
+    "dashboard": "Dashboard",
+    "favorites": "Favorites"
+  }
+}

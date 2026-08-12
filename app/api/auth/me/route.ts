@@ -9,7 +9,7 @@ export async function GET() {
   if (!user) {
     return NextResponse.json(
       {
-        authenticated: false,
+        message: "Unauthorized",
       },
       {
         status: 401,
@@ -17,8 +17,5 @@ export async function GET() {
     );
   }
 
-  return NextResponse.json({
-    authenticated: true,
-    user,
-  });
+  return NextResponse.json(user);
 }

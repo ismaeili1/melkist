@@ -1,11 +1,9 @@
-import {
-  NextRequest,
-  NextResponse,
-} from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { NextRequest, NextResponse } from "next/server";
+import { routing } from "@/i18n/routing";
+import { ACCESS_COOKIE } from "@/lib/auth/cookies";
 
-import {
-  ACCESS_COOKIE,
-} from "@/lib/auth/cookies";
+const intlMiddleware = createMiddleware(routing);
 
 const PROTECTED = [
   "/dashboard",
@@ -15,10 +13,7 @@ const PROTECTED = [
   "/property/create",
 ];
 
-const AUTH_ONLY = [
-  "/login",
-  "/register",
-];
+const AUTH_ONLY = ["/login", "/register"];
 
 const securityHeaders: Record<string, string> = {
   "X-DNS-Prefetch-Control": "on",
@@ -30,70 +25,51 @@ const securityHeaders: Record<string, string> = {
   "Cross-Origin-Resource-Policy": "same-origin",
 };
 
-export function proxy(
-  request: NextRequest,
-) {
-  const pathname =
-    request.nextUrl.pathname;
+function getLocaleAndPath(pathname: string) {
+  const match = pathname.match(/^\/(fa|en|ar|tr)(\/.*)?$/);
 
-  const accessToken =
-    request.cookies.get(
-      ACCESS_COOKIE,
-    );
+  if (match) {
+    return { locale: match[1], path: match[2] || "/" };
+  }
 
-  const isLoggedIn =
-    !!accessToken;
+  return { locale: routing.defaultLocale, path: pathname };
+}
+
+export function proxy(request: NextRequest) {
+  const { locale, path } = getLocaleAndPath(request.nextUrl.pathname);
+
+  const accessToken = request.cookies.get(ACCESS_COOKIE);
+  const isLoggedIn = !!accessToken;
 
   if (
     PROTECTED.some(
-      (route) =>
-        pathname === route ||
-        pathname.startsWith(`${route}/`),
+      (route) => path === route || path.startsWith(`${route}/`),
     ) &&
     !isLoggedIn
   ) {
-    return NextResponse.redirect(
-      new URL("/login", request.url),
-    );
+    return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
   }
 
   if (
     AUTH_ONLY.some(
-      (route) =>
-        pathname === route ||
-        pathname.startsWith(`${route}/`),
+      (route) => path === route || path.startsWith(`${route}/`),
     ) &&
     isLoggedIn
   ) {
     return NextResponse.redirect(
-      new URL("/dashboard", request.url),
+      new URL(`/${locale}/dashboard`, request.url),
     );
   }
 
-  const response =
-    NextResponse.next();
+  const response = intlMiddleware(request);
 
-  for (
-    const [key, value]
-    of Object.entries(securityHeaders)
-  ) {
-    response.headers.set(
-      key,
-      value,
-    );
+  for (const [key, value] of Object.entries(securityHeaders)) {
+    response.headers.set(key, value);
   }
 
   return response;
 }
 
 export const config = {
-  matcher: [
-    "/dashboard/:path*",
-    "/favorites/:path*",
-    "/saved-searches/:path*",
-    "/profile/:path*",
-    "/property/create/:path*",
-    "/login",
-    "/register",
-  ],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

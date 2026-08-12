@@ -1,0 +1,16 @@
+{
+  "common": { "siteName": "ملکیست" },
+  "nav": {
+    "home": "خانه",
+    "buySell": "خرید و فروش",
+    "rent": "رهن و اجاره",
+    "investment": "مشارکت و سرمایه‌گذاری",
+    "consulting": "خدمات مشاوره",
+    "architecture": "خدمات معماری و ساخت",
+    "projects": "پروژه‌ها",
+    "login": "ورود",
+    "register": "ثبت‌نام",
+    "dashboard": "داشبورد",
+    "favorites": "علاقه‌مندی‌ها"
+  }
+}

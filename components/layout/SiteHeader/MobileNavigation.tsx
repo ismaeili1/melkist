@@ -1,17 +1,9 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-
-import Link from "next/link";
-
-import {
-  mainNavigation,
-} from "@/components/navigation/navigation.config";
-
+import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import { mainNavigation } from "@/components/navigation/navigation.config";
 import styles from "./SiteHeader.module.css";
 
 export interface MobileNavigationProps {
@@ -19,73 +11,43 @@ export interface MobileNavigationProps {
   onClose: () => void;
 }
 
-function isNavigationItemActive(
-  pathname: string,
-  href: string,
-) {
+function isNavigationItemActive(pathname: string, href: string) {
   const hrefPath = href.split("?")[0];
 
   if (hrefPath === "/") {
     return pathname === "/";
   }
 
-  return (
-    pathname === hrefPath ||
-    pathname.startsWith(`${hrefPath}/`)
-  );
+  return pathname === hrefPath || pathname.startsWith(`${hrefPath}/`);
 }
 
-export function MobileNavigation({
-  open,
-  onClose,
-}: MobileNavigationProps) {
-  const [
-    activeHref,
-    setActiveHref,
-  ] = useState<string | null>(null);
-
-  const closeButtonRef =
-    useRef<HTMLButtonElement>(null);
+export function MobileNavigation({ open, onClose }: MobileNavigationProps) {
+  const pathname = usePathname();
+  const t = useTranslations("nav");
+  const tHeader = useTranslations("header");
+  const tActions = useTranslations("actions");
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) {
       return;
     }
 
-    const currentPath =
-      window.location.pathname;
-
-    setActiveHref(currentPath);
-
-    const previousOverflow =
-      document.body.style.overflow;
-
-    document.body.style.overflow =
-      "hidden";
-
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
 
-    function handleEscape(
-      event: KeyboardEvent,
-    ) {
+    function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
         onClose();
       }
     }
 
-    document.addEventListener(
-      "keydown",
-      handleEscape,
-    );
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.body.style.overflow =
-        previousOverflow;
-
-      document.removeEventListener(
-        "keydown",
-        handleEscape,
-      );
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [open, onClose]);
 
@@ -93,124 +55,67 @@ export function MobileNavigation({
     return null;
   }
 
-  function handleNavigationClick(
-    href: string,
-  ) {
-    setActiveHref(href);
-    onClose();
-  }
-
   return (
-    <div
-      className={
-        styles.mobileNavigationOverlay
-      }
-      role="presentation"
-      onClick={onClose}
-    >
+    <div className={styles.mobileNavigationOverlay} role="presentation" onClick={onClose}>
       <nav
         id="mobile-navigation"
-        className={
-          styles.mobileNavigationPanel
-        }
-        aria-label="منوی اصلی موبایل"
+        className={styles.mobileNavigationPanel}
+        aria-label={tHeader("mainMenuMobile")}
         onClick={(event) => {
           event.stopPropagation();
         }}
       >
-        <div
-          className={
-            styles.mobileNavigationHeader
-          }
-        >
-          <span
-            className={
-              styles.mobileNavigationTitle
-            }
-          >
-            منوی اصلی
+        <div className={styles.mobileNavigationHeader}>
+          <span className={styles.mobileNavigationTitle}>
+            {tHeader("mainMenu")}
           </span>
 
           <button
             ref={closeButtonRef}
             type="button"
-            className={
-              styles.mobileNavigationClose
-            }
+            className={styles.mobileNavigationClose}
             onClick={onClose}
-            aria-label="بستن منو"
+            aria-label={tHeader("closeMenu")}
           >
             ×
           </button>
         </div>
 
-        <ul
-          className={
-            styles.mobileNavigationList
-          }
-        >
+        <ul className={styles.mobileNavigationList}>
           {mainNavigation.map((item) => {
-            const isActive =
-              activeHref === item.href;
+            const isActive = isNavigationItemActive(pathname, item.href);
 
             return (
-              <li
-                key={item.id}
-                className={
-                  styles.mobileNavigationItem
-                }
-              >
+              <li key={item.id} className={styles.mobileNavigationItem}>
                 <Link
                   href={item.href}
                   className={[
                     styles.mobileNavigationLink,
-                    isActive
-                      ? styles.mobileNavigationLinkActive
-                      : "",
+                    isActive ? styles.mobileNavigationLinkActive : "",
                   ]
                     .filter(Boolean)
                     .join(" ")}
-                  onClick={() => {
-                    handleNavigationClick(
-                      item.href,
-                    );
-                  }}
-                  aria-current={
-                    isActive
-                      ? "page"
-                      : undefined
-                  }
+                  onClick={onClose}
+                  aria-current={isActive ? "page" : undefined}
                 >
-                  {item.label}
+                  {t(item.id)}
                 </Link>
               </li>
             );
           })}
         </ul>
 
-        <div
-          className={
-            styles.mobileNavigationActions
-          }
-        >
-          <Link
-            href="/login"
-            className={
-              styles.mobileLoginLink
-            }
-            onClick={onClose}
-          >
-            ورود
+        <div className={styles.mobileNavigationActions}>
+          <Link href="/login" className={styles.mobileLoginLink} onClick={onClose}>
+            {tActions("login")}
           </Link>
 
           <Link
             href="/property/create"
-            className={
-              styles.mobileCreateListingButton
-            }
+            className={styles.mobileCreateListingButton}
             onClick={onClose}
           >
-            ثبت ملک
+            {tActions("createListing")}
           </Link>
         </div>
       </nav>

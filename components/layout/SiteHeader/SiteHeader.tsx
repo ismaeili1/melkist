@@ -1,36 +1,18 @@
 "use client";
 
-import {
-  useRef,
-  useState,
-} from "react";
-
+import { useRef, useState } from "react";
 import Image from "next/image";
-
-import Link from "next/link";
-
-import {
-  DesktopNavigation,
-} from "./DesktopNavigation";
-
-import {
-  HeaderActions,
-} from "./HeaderActions";
-
-import {
-  MobileNavigation,
-} from "./MobileNavigation";
-
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { DesktopNavigation } from "./DesktopNavigation";
+import { HeaderActions } from "./HeaderActions";
+import { MobileNavigation } from "./MobileNavigation";
 import styles from "./SiteHeader.module.css";
 
 export function SiteHeader() {
-  const [
-    mobileMenuOpen,
-    setMobileMenuOpen,
-  ] = useState(false);
-
-  const menuButtonRef =
-    useRef<HTMLButtonElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const t = useTranslations("header");
 
   function openMobileMenu() {
     setMobileMenuOpen(true);
@@ -45,64 +27,42 @@ export function SiteHeader() {
   }
 
   return (
-    <header
-      className={styles.header}
-    >
-      <div
-        className={
-          styles.headerContainer
-        }
-      >
-        <div
-          className={
-            styles.headerStart
-          }
-        >
-          <Link
-  href="/"
-  className={styles.logo}
-  aria-label="ملکیست - صفحه اصلی"
->
-  <Image
-    src="/brand/logo/melkist-logo.svg"
-    alt=""
-    width={160}
-    height={80}
-    priority
-    className={styles.logoFull}
-  />
+    <header className={styles.header}>
+      <div className={styles.headerContainer}>
+        <div className={styles.headerStart}>
+          <Link href="/" className={styles.logo} aria-label={t("homeAriaLabel")}>
+            <Image
+              src="/brand/logo/melkist-logo.svg"
+              alt=""
+              width={160}
+              height={80}
+              priority
+              className={styles.logoFull}
+            />
 
-  <Image
-    src="/brand/logo/melkist-logo-Mark.svg"
-    alt=""
-    width={48}
-    height={48}
-    className={styles.logoMark}
-  />
-</Link>
+            <Image
+              src="/brand/logo/melkist-logo-Mark.svg"
+              alt=""
+              width={48}
+              height={48}
+              className={styles.logoMark}
+            />
+          </Link>
 
           <DesktopNavigation />
         </div>
 
-        <div
-          className={
-            styles.desktopHeaderActions
-          }
-        >
+        <div className={styles.desktopHeaderActions}>
           <HeaderActions />
         </div>
 
         <button
           ref={menuButtonRef}
           type="button"
-          className={
-            styles.mobileMenuButton
-          }
+          className={styles.mobileMenuButton}
           onClick={openMobileMenu}
-          aria-label="باز کردن منوی اصلی"
-          aria-expanded={
-            mobileMenuOpen
-          }
+          aria-label={t("openMenu")}
+          aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation"
         >
           <span />
@@ -111,10 +71,7 @@ export function SiteHeader() {
         </button>
       </div>
 
-      <MobileNavigation
-        open={mobileMenuOpen}
-        onClose={closeMobileMenu}
-      />
+      <MobileNavigation open={mobileMenuOpen} onClose={closeMobileMenu} />
     </header>
   );
 }

@@ -1,6 +1,12 @@
 {
   "common": { "siteName": "Melkist" },
   "nav": {
+    "property": "Emlak",
+    "professional-services": "Profesyonel Hizmetler",
+    "construction-equipment": "İnşaat ve Ekipman",
+    "projects": "Projeler",
+    "global-opportunities": "Küresel Fırsatlar",
+    "magazine": "Dergi",
     "consulting": "Danışmanlık Hizmetleri",
     "buy-consulting": "Satın Alma Danışmanlığı",
     "sale-consulting": "Satış Danışmanlığı",
@@ -58,5 +64,37 @@
     "settingsAlerts": "Uyarı Ayarları",
     "copyright": "© 2026 MELKIST",
     "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "placeholders": {
+    "professionalServices": {
+      "eyebrow": "MELKIST Profesyonel Hizmetler",
+      "title": "Mimar, mühendis ve müteahhitler ağı",
+      "description": "Yakında Melkist üzerinden uzman mimarlar, mühendisler ve müteahhitlerle doğrudan arama yapıp iletişime geçebileceksiniz. Şimdilik mevcut danışmanlık ve mimarlık hizmetlerimizden yararlanabilirsiniz.",
+      "primaryAction": "Danışmanlık Hizmetlerini Görüntüle"
+    },
+    "constructionEquipment": {
+      "eyebrow": "MELKIST İnşaat ve Ekipman",
+      "title": "Yapı malzemeleri ve ekipmanları için özel pazar yeri",
+      "description": "Bu bölüm yapım aşamasındadır ve yakında malzeme, tesisat, akıllı ev ekipmanları ve dekorasyon satın alma imkanı sunacaktır.",
+      "primaryAction": "Ana Sayfaya Dön"
+    },
+    "globalOpportunities": {
+      "eyebrow": "MELKIST Küresel Fırsatlar",
+      "title": "Uluslararası gayrimenkul ve yatırım",
+      "description": "Türkiye, Körfez ülkeleri, Avrupa, Asya ve Amerika'daki yatırım ve gayrimenkul fırsatları yakında burada yer alacak.",
+      "primaryAction": "Yerel Fırsatları Görüntüle"
+    },
+    "magazine": {
+      "eyebrow": "MELKIST Dergisi",
+      "title": "Gayrimenkul ve mimari haberleri, analizleri ve rehberleri",
+      "description": "Melkist Dergisi yakında yayında; gayrimenkul ve mimari alanında haberler, piyasa analizleri, uzman rehberleri ve podcast'ler sunacak.",
+      "primaryAction": "Ana Sayfaya Dön"
+    },
+    "projects": {
+      "eyebrow": "MELKIST Projeleri",
+      "title": "Geleceği İnşa Eden Projeler",
+      "description": "İnceleme ve katılım için seçilmiş inşaat, geliştirme ve yatırım fırsatlarını keşfedin.",
+      "primaryAction": "Projeleri Görüntüle"
+    }
   }
 }

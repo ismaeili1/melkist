@@ -1,3 +1,5 @@
+import { Link } from "@/i18n/navigation";
+
 interface RoutePlaceholderData {
   eyebrow: string;
   title: string;
@@ -10,9 +12,7 @@ interface RoutePlaceholderProps {
   data: RoutePlaceholderData;
 }
 
-export function RoutePlaceholder({
-  data,
-}: RoutePlaceholderProps) {
+export function RoutePlaceholder({ data }: RoutePlaceholderProps) {
   return (
     <main
       style={{
@@ -22,14 +22,9 @@ export function RoutePlaceholder({
       }}
     >
       <small>{data.eyebrow}</small>
-
       <h1>{data.title}</h1>
-
       <p>{data.description}</p>
-
-      <a href={data.primaryHref}>
-        {data.primaryAction}
-      </a>
+      <Link href={data.primaryHref}>{data.primaryAction}</Link>
     </main>
   );
 }

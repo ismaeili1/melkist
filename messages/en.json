@@ -1,6 +1,12 @@
 {
   "common": { "siteName": "Melkist" },
   "nav": {
+    "property": "Property",
+    "professional-services": "Professional Services",
+    "construction-equipment": "Construction & Equipment",
+    "projects": "Projects",
+    "global-opportunities": "Global Opportunities",
+    "magazine": "Magazine",
     "consulting": "Consulting Services",
     "buy-consulting": "Buying Consultation",
     "sale-consulting": "Selling Consultation",
@@ -58,5 +64,37 @@
     "settingsAlerts": "Alert Settings",
     "copyright": "© 2026 MELKIST",
     "allRightsReserved": "All rights reserved."
+  },
+  "placeholders": {
+    "professionalServices": {
+      "eyebrow": "MELKIST Professional Services",
+      "title": "A network of architects, engineers, and contractors",
+      "description": "Soon you'll be able to search and connect directly with specialized architects, engineers, and contractors through Melkist. For now, explore our existing consulting and architecture services.",
+      "primaryAction": "View Consulting Services"
+    },
+    "constructionEquipment": {
+      "eyebrow": "MELKIST Construction & Equipment",
+      "title": "A dedicated marketplace for building materials and equipment",
+      "description": "This section is under construction and will soon offer materials, installations, smart-home equipment, and decor for purchase.",
+      "primaryAction": "Back to Home"
+    },
+    "globalOpportunities": {
+      "eyebrow": "MELKIST Global Opportunities",
+      "title": "International real estate and investment",
+      "description": "Investment and property opportunities in Turkey, the Gulf, Europe, Asia, and the Americas will be featured here soon.",
+      "primaryAction": "View Local Opportunities"
+    },
+    "magazine": {
+      "eyebrow": "MELKIST Magazine",
+      "title": "News, analysis, and guides on real estate and architecture",
+      "description": "The Melkist Magazine is launching soon, featuring news, market analysis, expert guides, and podcasts on real estate and architecture.",
+      "primaryAction": "Back to Home"
+    },
+    "projects": {
+      "eyebrow": "MELKIST Projects",
+      "title": "Projects Built for the Future",
+      "description": "Explore construction, development, and selected investment opportunities for review and participation.",
+      "primaryAction": "View Projects"
+    }
   }
 }

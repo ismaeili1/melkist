@@ -96,5 +96,74 @@
       "description": "Explore construction, development, and selected investment opportunities for review and participation.",
       "primaryAction": "View Projects"
     }
+  },
+  "home": {
+    "hero": {
+      "title1": "A smarter path",
+      "title2": "Property + Architecture",
+      "description": "Melkist is a platform for searching, buying, selling, renting and mortgaging property, investing, and getting specialized architecture and construction services.",
+      "searchAction": "Search Properties",
+      "consultAction": "Get Consultation"
+    },
+    "coreServices": {
+      "title": "Everything for a better decision",
+      "description": "Melkist's property, professional, and construction services are available on one integrated path for more informed decisions.",
+      "propertyDesc": "Search, buy, sell, rent, mortgage, and invest across all property types.",
+      "professional-servicesDesc": "Connect with architects, consultants, and construction specialists.",
+      "construction-equipmentDesc": "Materials, installations, and equipment for your construction projects.",
+      "projectsDesc": "Discover construction, development, and investment projects.",
+      "global-opportunitiesDesc": "Property and investment opportunities in international markets.",
+      "magazineDesc": "News, analysis, and expert guides on real estate and architecture."
+    },
+    "featuredProperties": {
+      "eyebrow": "Featured Properties",
+      "title": "Selected Real Estate Opportunities",
+      "viewAll": "View All Properties",
+      "sampleImageAlt": "Sample image of {title}",
+      "viewLabel": "View",
+      "priceOnRequest": "Contact us for pricing",
+      "property1Type": "Apartment",
+      "property1Title": "Modern Apartment with Contemporary Design",
+      "property1Location": "Tehran, District 1",
+      "property1Details": "185 sqm · 3 Bedrooms · Parking",
+      "property2Type": "Villa",
+      "property2Title": "Detached Villa with Private Garden",
+      "property2Location": "Mazandaran",
+      "property2Details": "420 sqm land · 280 sqm built area",
+      "property3Type": "Office",
+      "property3Title": "Office Space Suited for Professional Firms",
+      "property3Location": "Tehran, District 6",
+      "property3Details": "240 sqm · Parking · Excellent Access"
+    },
+    "consulting": {
+      "title1": "Before the big decision,",
+      "title2": "decide the right way",
+      "description": "Use Melkist's specialized consultation to navigate buying, selling, renting, and investing with more accurate information.",
+      "action": "Get Consultation"
+    },
+    "architecture": {
+      "title1": "From idea",
+      "title2": "to project execution",
+      "description": "Melkist's specialized architecture and construction services are with you from the idea and design stage through supervision, execution, and renovation.",
+      "action": "View Architecture Services",
+      "facadeDesign": "Facade Design",
+      "modelingRendering": "Modeling & Rendering"
+    },
+    "investment": {
+      "title": "Projects Built for the Future",
+      "viewAll": "View Projects",
+      "detailsLabel": "View Details",
+      "project1Category": "Construction Project",
+      "project1Title": "Selected Construction & Development Projects",
+      "project1Description": "Explore projects with strong development, construction, and investment potential.",
+      "project2Category": "Investment Opportunity",
+      "project2Title": "Real Estate Investment Opportunities",
+      "project2Description": "Selected opportunities for investors and partners in construction projects."
+    },
+    "finalCta": {
+      "title": "Have a Property or Project to List?",
+      "description": "List your property, project, or specialized service in the MELKIST ecosystem.",
+      "consultAction": "Request Consultation"
+    }
   }
 }

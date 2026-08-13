@@ -96,5 +96,74 @@
       "description": "İnceleme ve katılım için seçilmiş inşaat, geliştirme ve yatırım fırsatlarını keşfedin.",
       "primaryAction": "Projeleri Görüntüle"
     }
+  },
+  "home": {
+    "hero": {
+      "title1": "Daha akıllı bir yol",
+      "title2": "Gayrimenkul + Mimari",
+      "description": "Melkist; gayrimenkul arama, alım, satım, kiralama ve ipotek, yatırım ile uzman mimarlık ve inşaat hizmetleri için bir platformdur.",
+      "searchAction": "Emlak Ara",
+      "consultAction": "Danışmanlık Al"
+    },
+    "coreServices": {
+      "title": "Daha iyi bir karar için her şey",
+      "description": "Melkist'in emlak, profesyonel ve inşaat hizmetleri, daha bilinçli kararlar için tek bir bütünleşik yolda sunulur.",
+      "propertyDesc": "Her türlü gayrimenkulde arama, alım, satım, kiralama, ipotek ve yatırım yapın.",
+      "professional-servicesDesc": "Mimarlar, danışmanlar ve inşaat uzmanlarıyla bağlantı kurun.",
+      "construction-equipmentDesc": "İnşaat projeleriniz için malzeme, tesisat ve ekipman.",
+      "projectsDesc": "İnşaat, geliştirme ve yatırım projelerini keşfedin.",
+      "global-opportunitiesDesc": "Uluslararası pazarlarda gayrimenkul ve yatırım fırsatları.",
+      "magazineDesc": "Gayrimenkul ve mimari alanında haberler, analizler ve uzman rehberleri."
+    },
+    "featuredProperties": {
+      "eyebrow": "Öne Çıkan Emlaklar",
+      "title": "Seçkin Gayrimenkul Fırsatları",
+      "viewAll": "Tüm Emlakları Görüntüle",
+      "sampleImageAlt": "{title} örnek görseli",
+      "viewLabel": "Görüntüle",
+      "priceOnRequest": "Fiyat bilgisi için bizimle iletişime geçin",
+      "property1Type": "Daire",
+      "property1Title": "Çağdaş Tasarımlı Modern Daire",
+      "property1Location": "Tahran, 1. Bölge",
+      "property1Details": "185 m² · 3 Yatak Odası · Otopark",
+      "property2Type": "Villa",
+      "property2Title": "Özel Bahçeli Müstakil Villa",
+      "property2Location": "Mazandaran",
+      "property2Details": "420 m² arsa · 280 m² inşaat alanı",
+      "property3Type": "Ofis",
+      "property3Title": "Profesyonel Şirketlere Uygun Ofis Alanı",
+      "property3Location": "Tahran, 6. Bölge",
+      "property3Details": "240 m² · Otopark · Mükemmel Ulaşım"
+    },
+    "consulting": {
+      "title1": "Büyük karardan önce,",
+      "title2": "doğru karar verin",
+      "description": "Melkist'in uzman danışmanlığıyla alım, satım, kiralama ve yatırım sürecini daha doğru bilgilerle yürütün.",
+      "action": "Danışmanlık Al"
+    },
+    "architecture": {
+      "title1": "Fikirden",
+      "title2": "proje uygulamasına",
+      "description": "Melkist'in uzman mimarlık ve inşaat hizmetleri, fikir ve tasarım aşamasından denetim, uygulama ve tadilata kadar yanınızda.",
+      "action": "Mimarlık Hizmetlerini Görüntüle",
+      "facadeDesign": "Cephe Tasarımı",
+      "modelingRendering": "Modelleme ve Görselleştirme"
+    },
+    "investment": {
+      "title": "Geleceğe Yönelik Projeler",
+      "viewAll": "Projeleri Görüntüle",
+      "detailsLabel": "Detayları Görüntüle",
+      "project1Category": "İnşaat Projesi",
+      "project1Title": "Seçkin İnşaat ve Geliştirme Projeleri",
+      "project1Description": "Güçlü geliştirme, inşaat ve yatırım potansiyeline sahip projeleri keşfedin.",
+      "project2Category": "Yatırım Fırsatı",
+      "project2Title": "Gayrimenkul Yatırım Fırsatları",
+      "project2Description": "İnşaat projelerinde yatırımcılar ve ortaklar için seçkin fırsatlar."
+    },
+    "finalCta": {
+      "title": "Listelemek İstediğiniz Bir Emlak veya Proje mi Var?",
+      "description": "Emlağınızı, projenizi veya uzmanlık hizmetinizi MELKIST ekosisteminde tanıtın.",
+      "consultAction": "Danışmanlık Talep Et"
+    }
   }
 }

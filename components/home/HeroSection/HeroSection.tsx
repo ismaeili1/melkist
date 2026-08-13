@@ -1,78 +1,41 @@
-﻿import Link from "next/link";
-
-import {
-  Container,
-} from "@/components/layout-system/Container";
-
-import {
-  Section,
-} from "@/components/layout-system/Section";
-
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { Container } from "@/components/layout-system/Container";
+import { Section } from "@/components/layout-system/Section";
 import styles from "./HeroSection.module.css";
 
-export function HeroSection() {
-  return (
-    <Section
-      className={styles.heroSection}
-    >
-      <Container>
-        <div
-          className={styles.hero}
-        >
-          <div
-            className={styles.content}
-          >
-            <p
-              className={styles.eyebrow}
-            >
-              MELKIST REAL ESTATE & ARCHITECTURE
-            </p>
+export async function HeroSection() {
+  const t = await getTranslations("home.hero");
 
-            <h1
-              className={styles.title}
-            >
-              مسیر هوشمندانه‌تر
-              <span>
-                ملک + معماری
-              </span>
+  return (
+    <Section className={styles.heroSection}>
+      <Container>
+        <div className={styles.hero}>
+          <div className={styles.content}>
+            <p className={styles.eyebrow}>MELKIST REAL ESTATE & ARCHITECTURE</p>
+
+            <h1 className={styles.title}>
+              {t("title1")}
+              <span>{t("title2")}</span>
             </h1>
 
-            <p
-              className={styles.description}
-            >
-              ملکیست بستری برای جست‌وجو، خرید، فروش،
-              رهن و اجاره ملک، سرمایه‌گذاری و دریافت
-              خدمات تخصصی معماری و ساختمان است.
-            </p>
+            <p className={styles.description}>{t("description")}</p>
 
-            <div
-              className={styles.actions}
-            >
-              <Link
-                href="/property"
-                className={styles.primaryAction}
-              >
-                جست‌وجوی ملک
+            <div className={styles.actions}>
+              <Link href="/property" className={styles.primaryAction}>
+                {t("searchAction")}
               </Link>
 
-              <Link
-                href="/consulting"
-                className={styles.secondaryAction}
-              >
-                دریافت مشاوره
+              <Link href="/consulting" className={styles.secondaryAction}>
+                {t("consultAction")}
               </Link>
             </div>
           </div>
 
-          <div
-            className={styles.visual}
-            aria-hidden="true"
-          >
-            <div
-              className={styles.visualCard}
-            >
+          <div className={styles.visual} aria-hidden="true">
+            <div className={styles.visualCard}>
               <img
-                src="/brand/logo/melkist-logo-Mark.png"
+                src="/brand/logo/melkist-logo-Mark.svg"
                 alt=""
                 className={styles.mark}
               />

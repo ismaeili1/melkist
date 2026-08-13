@@ -1,78 +1,52 @@
-﻿import Link from "next/link";
-
-import {
-  Container,
-} from "@/components/layout-system/Container";
-
-import {
-  Section,
-} from "@/components/layout-system/Section";
-
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { Container } from "@/components/layout-system/Container";
+import { Section } from "@/components/layout-system/Section";
 import styles from "./ConsultingSection.module.css";
 
-const consultingServices = [
-  "مشاوره خرید ملک",
-  "مشاوره فروش ملک",
-  "مشاوره رهن و اجاره",
-  "مشاوره سرمایه‌گذاری",
-  "ارزیابی و ارزش‌گذاری ملک",
+const consultingServiceIds = [
+  "buy-consulting",
+  "sale-consulting",
+  "rent-consulting",
+  "investment-consulting",
+  "valuation-consulting",
 ];
 
-export function ConsultingSection() {
+export async function ConsultingSection() {
+  const t = await getTranslations("home.consulting");
+  const tNav = await getTranslations("nav");
+
   return (
     <Section>
       <Container>
         <div className={styles.layout}>
           <div className={styles.content}>
-            <span className={styles.eyebrow}>
-              CONSULTING
-            </span>
+            <span className={styles.eyebrow}>CONSULTING</span>
 
             <h2 className={styles.title}>
-              قبل از تصمیم بزرگ،
+              {t("title1")}
               <br />
-              درست تصمیم بگیرید
+              {t("title2")}
             </h2>
 
-            <p className={styles.description}>
-              با استفاده از مشاوره تخصصی ملکیست،
-              مسیر خرید، فروش، اجاره و سرمایه‌گذاری
-              را با اطلاعات دقیق‌تر طی کنید.
-            </p>
+            <p className={styles.description}>{t("description")}</p>
 
-            <Link
-              href="/consulting"
-              className={styles.action}
-            >
-              دریافت مشاوره
-              <span aria-hidden="true">
-                ←
-              </span>
+            <Link href="/consulting" className={styles.action}>
+              {t("action")}
+              <span aria-hidden="true">←</span>
             </Link>
           </div>
 
           <div className={styles.services}>
-            {consultingServices.map(
-              (service, index) => (
-                <Link
-                  key={service}
-                  href="/consulting"
-                  className={styles.service}
-                >
-                  <span>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+            {consultingServiceIds.map((id, index) => (
+              <Link key={id} href="/consulting" className={styles.service}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
 
-                  <strong>
-                    {service}
-                  </strong>
+                <strong>{tNav(id)}</strong>
 
-                  <span aria-hidden="true">
-                    ←
-                  </span>
-                </Link>
-              ),
-            )}
+                <span aria-hidden="true">←</span>
+              </Link>
+            ))}
           </div>
         </div>
       </Container>

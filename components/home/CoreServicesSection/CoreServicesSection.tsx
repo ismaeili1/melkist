@@ -1,118 +1,44 @@
-﻿import Link from "next/link";
-
-import {
-  Container,
-} from "@/components/layout-system/Container";
-
-import {
-  Section,
-} from "@/components/layout-system/Section";
-
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { Container } from "@/components/layout-system/Container";
+import { Section } from "@/components/layout-system/Section";
 import styles from "./CoreServicesSection.module.css";
 
 const services = [
-  {
-    id: "consulting",
-    number: "01",
-    title: "خدمات مشاوره",
-    description:
-      "مشاوره تخصصی برای خرید، فروش، رهن، اجاره و سرمایه‌گذاری.",
-    href: "/consulting",
-  },
-  {
-    id: "buy-sale",
-    number: "02",
-    title: "خرید و فروش",
-    description:
-      "جست‌وجو و معرفی فرصت‌های خرید و فروش انواع املاک.",
-    href: "/buy-sell",
-  },
-  {
-    id: "rent",
-    number: "03",
-    title: "رهن و اجاره",
-    description:
-      "دسترسی به گزینه‌های رهن کامل، اجاره و اجاره کوتاه‌مدت.",
-    href: "/rent",
-  },
-  {
-    id: "investment",
-    number: "04",
-    title: "مشارکت و سرمایه‌گذاری",
-    description:
-      "فرصت‌های مشارکت در ساخت و سرمایه‌گذاری در پروژه‌های ملکی.",
-    href: "/investment",
-  },
-  {
-    id: "architecture",
-    number: "05",
-    title: "خدمات تخصصی معماری و ساختمان",
-    description:
-      "از طراحی و معماری داخلی تا نظارت، اجرا و بازسازی.",
-    href: "/architecture",
-  },
+  { id: "property", number: "01", href: "/property" },
+  { id: "professional-services", number: "02", href: "/professional-services" },
+  { id: "construction-equipment", number: "03", href: "/construction-equipment" },
+  { id: "projects", number: "04", href: "/projects" },
+  { id: "global-opportunities", number: "05", href: "/global-opportunities" },
+  { id: "magazine", number: "06", href: "/magazine" },
 ];
 
-export function CoreServicesSection() {
+export async function CoreServicesSection() {
+  const t = await getTranslations("home.coreServices");
+  const tNav = await getTranslations("nav");
+
   return (
     <Section>
       <Container>
-        <div
-          className={styles.header}
-        >
+        <div className={styles.header}>
           <div>
-            <p
-              className={styles.eyebrow}
-            >
-              MELKIST SERVICES
-            </p>
-
-            <h2
-              className={styles.title}
-            >
-              همه‌چیز برای تصمیم بهتر
-            </h2>
+            <p className={styles.eyebrow}>MELKIST SERVICES</p>
+            <h2 className={styles.title}>{t("title")}</h2>
           </div>
 
-          <p
-            className={styles.description}
-          >
-            خدمات ملکی و معماری ملکیست در یک مسیر یکپارچه
-            برای تصمیم‌گیری دقیق‌تر در اختیار شماست.
-          </p>
+          <p className={styles.description}>{t("description")}</p>
         </div>
 
-        <div
-          className={styles.grid}
-        >
+        <div className={styles.grid}>
           {services.map((service) => (
-            <Link
-              key={service.id}
-              href={service.href}
-              className={styles.card}
-            >
-              <span
-                className={styles.number}
-              >
-                {service.number}
-              </span>
+            <Link key={service.id} href={service.href} className={styles.card}>
+              <span className={styles.number}>{service.number}</span>
 
-              <h3
-                className={styles.cardTitle}
-              >
-                {service.title}
-              </h3>
+              <h3 className={styles.cardTitle}>{tNav(service.id)}</h3>
 
-              <p
-                className={styles.cardDescription}
-              >
-                {service.description}
-              </p>
+              <p className={styles.cardDescription}>{t(`${service.id}Desc`)}</p>
 
-              <span
-                className={styles.arrow}
-                aria-hidden="true"
-              >
+              <span className={styles.arrow} aria-hidden="true">
                 ←
               </span>
             </Link>

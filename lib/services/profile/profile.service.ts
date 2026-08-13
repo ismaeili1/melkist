@@ -37,17 +37,7 @@ export class ProfileService {
       throw new ProfileNotFoundError();
     }
 
-    if (
-      data.email &&
-      data.email !== profile.email
-    ) {
-      const emailOwner =
-        await this.repository.findByEmail(data.email);
 
-      if (emailOwner) {
-        throw new DuplicateEmailError();
-      }
-    }
 
     return this.repository.update(userId, data);
   }

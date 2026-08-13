@@ -8,7 +8,7 @@ export interface UpdateProfileInput {
 
   phone?: string;
 
-  avatarUrl?: string;
+  avatar?: string;
 
   language?: string;
 

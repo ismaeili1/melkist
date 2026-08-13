@@ -1,19 +1,26 @@
+import { toAuthUser } from "@/lib/auth/types/auth-user.mapper";
 import { UserRepository } from "@/lib/repositories/user";
 
 import { hashPassword } from "@/lib/auth/password/hash";
 import { verifyPassword } from "@/lib/auth/password/verify";
 
-import { createSession } from "@/lib/auth/session/createSession";
-import { destroySession } from "@/lib/auth/session/destroySession";
-import { getSession } from "@/lib/auth/session/getSession";
+import {
+  createUserSession,
+} from "@/lib/auth/session/services";
 
-import type { UserSession } from "@/lib/auth/session/session.types";
+import {
+  logoutCurrentSession,
+} from "@/lib/auth/session/services/logout-current-session";
+
+import {
+  getCurrentUser,
+  } from "@/lib/auth/session/services/get-current-user";
 
 import type {
   LoginInput,
   RegisterInput,
   AuthUser,
-} from "./auth.types";
+} from "@/lib/auth/types";
 
 export class AuthenticationService {
   async register(
@@ -37,16 +44,17 @@ export class AuthenticationService {
       await UserRepository.create({
         email: input.email,
         password,
-        });
+        firstName: input.firstName,
+        lastName: input.lastName,
+      });
 
-    await createSession({
-      userId: user.id,
+    await createUserSession({
+      id: user.id,
       email: user.email,
       role: user.role,
-      createdAt: user.createdAt,
     });
 
-    return user;
+    return toAuthUser(user);
   }
 
   async login(
@@ -71,28 +79,21 @@ export class AuthenticationService {
       throw new Error("Invalid credentials.");
     }
 
-    await createSession({
-      userId: user.id,
+    await createUserSession({
+      id: user.id,
       email: user.email,
       role: user.role,
-      createdAt: user.createdAt,
     });
 
-    return user;
+    return toAuthUser(user);
   }
 
   async logout(): Promise<void> {
-    await destroySession();
+    await logoutCurrentSession();
   }
 
-  async currentUser(): Promise<UserSession | null> {
-    const session = await getSession();
-
-    if (!session) {
-      return null;
-    }
-
-    return session;
+  async currentUser(): Promise<AuthUser | null> {
+    return getCurrentUser();
   }
 }
 

@@ -1,5 +1,8 @@
 {
     "recommendations": [
-        "openai.chatgpt"
+        "openai.chatgpt",
+        "dangmai.workspace-default-settings",
+        "fooxly.workspace",
+        "github.codespaces"
     ]
 }

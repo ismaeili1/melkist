@@ -1,19 +1,18 @@
-import styles from "./Image.module.css";
-
-export interface ImagePlaceholderProps {
-  label?: string;
+interface ImagePlaceholderProps {
+  height?: number;
 }
 
 export function ImagePlaceholder({
-  label = "در حال بارگذاری تصویر...",
+  height = 250,
 }: ImagePlaceholderProps) {
   return (
     <div
-      className={styles.placeholder}
-      role="status"
-      aria-label={label}
-    >
-      {label}
-    </div>
+      style={{
+        width: "100%",
+        height,
+        background: "#f3f3f3",
+        borderRadius: 8,
+      }}
+    />
   );
 }

@@ -1,131 +1,111 @@
-import { PrismaClient } from "@prisma/client";
-import {
-    UpdateProfileInput,
-    ProfileWithCounts,
-} from "./profile.types";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+import type {
+  Prisma,
+  Profile,
+} from "@prisma/client";
+
+import type {
+  UpdateProfileInput,
+  ProfileWithCounts,
+} from "./profile.types";
 
 export class ProfileRepository {
 
-    async findById(userId: string) {
+  async findById(
+    userId: string,
+  ): Promise<Profile | null> {
 
-        return prisma.user.findUnique({
+    return prisma.profile.findUnique({
+      where: {
+        userId,
+      },
+    });
+  }
 
-            where: {
+  async findByUserId(
+    userId: string,
+  ): Promise<Profile | null> {
 
-                id: userId,
+    return prisma.profile.findUnique({
+      where: {
+        userId,
+      },
+    });
+  }
 
-            },
+  async create(
+    data: Prisma.ProfileCreateInput,
+  ): Promise<Profile> {
 
-        });
+    return prisma.profile.create({
+      data,
+    });
+  }
 
+  async update(
+    userId: string,
+    data: UpdateProfileInput | Prisma.ProfileUpdateInput,
+  ): Promise<Profile> {
+
+    return prisma.profile.update({
+      where: {
+        userId,
+      },
+      data: data as Prisma.ProfileUpdateInput,
+    });
+  }
+
+  async delete(
+    userId: string,
+  ): Promise<Profile> {
+
+    return prisma.profile.delete({
+      where: {
+        userId,
+      },
+    });
+  }
+
+  async exists(
+    userId: string,
+  ): Promise<boolean> {
+
+    const count = await prisma.profile.count({
+      where: {
+        userId,
+      },
+    });
+
+    return count > 0;
+  }
+
+  async getProfileSummary(
+    userId: string,
+  ): Promise<ProfileWithCounts | null> {
+
+    const user = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      include: {
+        profile: true,
+        properties: true,
+        favorites: true,
+      },
+    });
+
+    if (!user) {
+      return null;
     }
 
-    async findByEmail(email: string) {
-
-        return prisma.user.findUnique({
-
-            where: {
-
-                email,
-
-            },
-
-        });
-
-    }
-
-    async update(
-
-        userId: string,
-
-        data: UpdateProfileInput,
-
-    ) {
-
-        return prisma.user.update({
-
-            where: {
-
-                id: userId,
-
-            },
-
-            data,
-
-        });
-
-    }
-
-    async delete(userId: string) {
-
-        return prisma.user.delete({
-
-            where: {
-
-                id: userId,
-
-            },
-
-        });
-
-    }
-
-    async exists(userId: string): Promise<boolean> {
-
-        const count = await prisma.user.count({
-
-            where: {
-
-                id: userId,
-
-            },
-
-        });
-
-        return count > 0;
-
-    }
-
-    async getProfileSummary(
-
-        userId: string,
-
-    ): Promise<ProfileWithCounts | null> {
-
-        const user = await prisma.user.findUnique({
-
-            where: {
-
-                id: userId,
-
-            },
-
-            include: {
-
-                properties: true,
-
-                favorites: true,
-
-            },
-
-        });
-
-        if (!user)
-
-            return null;
-
-        return {
-
-            user,
-
-            propertyCount: user.properties.length,
-
-            favoriteCount: user.favorites.length,
-
-        };
-
-    }
-
+    return {
+      user,
+      propertyCount: user.properties.length,
+      favoriteCount: user.favorites.length,
+    };
+  }
 }
+
+export const profileRepository =
+  new ProfileRepository();

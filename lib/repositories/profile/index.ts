@@ -1,3 +1,9 @@
-export * from "./profile.repository";
+export {
+  ProfileRepository,
+  profileRepository,
+} from "./profile.repository";
 
-export * from "./profile.types";
+export type {
+  UpdateProfileInput,
+  ProfileWithCounts,
+} from "./profile.types";

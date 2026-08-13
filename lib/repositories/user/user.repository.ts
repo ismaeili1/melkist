@@ -22,8 +22,33 @@ export const UserRepository = {
     email: string,
   ): Promise<User | null> {
     return prisma.user.findUnique({
-      where: { email },
+      where: {
+        email: email.toLowerCase(),
+      },
     });
+  },
+
+  async findWithProfile(
+    id: string,
+  ) {
+    return prisma.user.findUnique({
+      where: { id },
+      include: {
+        profile: true,
+      },
+    });
+  },
+
+  async exists(
+    email: string,
+  ): Promise<boolean> {
+    const count = await prisma.user.count({
+      where: {
+        email: email.toLowerCase(),
+      },
+    });
+
+    return count > 0;
   },
 
   async create(
@@ -44,11 +69,44 @@ export const UserRepository = {
     });
   },
 
+  async softDelete(
+    id: string,
+  ): Promise<User> {
+    return prisma.user.update({
+      where: { id },
+      data: {
+        deletedAt: new Date(),
+      },
+    });
+  },
+
   async delete(
     id: string,
   ): Promise<User> {
     return prisma.user.delete({
       where: { id },
+    });
+  },
+
+  async updateLastLogin(
+    id: string,
+  ): Promise<User> {
+    return prisma.user.update({
+      where: { id },
+      data: {
+        lastLoginAt: new Date(),
+      },
+    });
+  },
+
+  async verifyEmail(
+    id: string,
+  ): Promise<User> {
+    return prisma.user.update({
+      where: { id },
+      data: {
+        emailVerified: true,
+      },
     });
   },
 };

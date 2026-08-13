@@ -1,26 +1,20 @@
 import { redirect } from "next/navigation";
 
-import {
-  getSession,
-} from "../session";
+import { UserRole } from "@prisma/client";
 
+import { getAuthContext } from "@/lib/auth/context/auth-context";
 export async function requireRole(
-  roles: string[],
+  roles: UserRole[],
 ) {
-  const session =
-    await getSession();
 
-  if (!session) {
+const user = await getAuthContext();
+  if (!user) {
     redirect("/login");
   }
 
-  if (
-    !roles.includes(
-      session.role,
-    )
-  ) {
+  if (!roles.includes(user.role)) {
     redirect("/");
   }
 
-  return session;
+  return user;
 }

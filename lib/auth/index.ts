@@ -13,3 +13,5 @@ export * from "./guards";
 export * from "./permissions";
 
 export * from "./token";
+
+export * from "./types";

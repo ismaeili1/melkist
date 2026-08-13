@@ -1,4 +1,7 @@
-import { UserRole, AccountStatus } from "@prisma/client";
+import {
+  UserRole,
+  AccountStatus,
+} from "@prisma/client";
 
 export interface AuthUser {
   id: string;
@@ -18,4 +21,26 @@ export interface AuthUser {
   emailVerified: boolean;
 
   createdAt: Date;
+}
+
+
+export interface LoginInput {
+
+  email: string;
+
+  password: string;
+
+}
+
+
+export interface RegisterInput {
+
+  email: string;
+
+  password: string;
+
+  firstName?: string;
+
+  lastName?: string;
+
 }

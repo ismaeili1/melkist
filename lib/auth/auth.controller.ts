@@ -3,7 +3,7 @@ import { authService } from "./service";
 import type {
   LoginInput,
   RegisterInput,
-} from "./service/auth.types";
+} from "./types";
 
 export class AuthenticationController {
   async register(

@@ -213,9 +213,22 @@
       "submit": "Sign Up",
       "submitting": "Signing up..."
     },
+    "forgotPassword": {
+      "title": "Password Recovery"
+    },
     "errors": {
       "invalidCredentials": "Incorrect email or password.",
       "registrationFailed": "Registration failed. Please try again."
     }
+  },
+  "galleryDemo": {
+    "title": "Property Gallery Demo",
+    "subtitle": "MELKIST v0.6.9.1 — Runtime Interaction Testing",
+    "ariaLabel": "Property Image Gallery",
+    "image1Alt": "Modern interior of a residential unit",
+    "image2Alt": "Modern living room",
+    "image3Alt": "Modern kitchen",
+    "image4Alt": "Bright, minimal interior space",
+    "image5Alt": "Modern bedroom"
   }
 }

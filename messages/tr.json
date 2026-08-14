@@ -213,9 +213,22 @@
       "submit": "Kayıt Ol",
       "submitting": "Kayıt olunuyor..."
     },
+    "forgotPassword": {
+      "title": "Şifre Kurtarma"
+    },
     "errors": {
       "invalidCredentials": "E-posta veya şifre hatalı.",
       "registrationFailed": "Kayıt başarısız oldu. Lütfen tekrar deneyin."
     }
+  },
+  "galleryDemo": {
+    "title": "Emlak Galerisi Demosu",
+    "subtitle": "MELKIST v0.6.9.1 — Çalışma Zamanı Etkileşim Testi",
+    "ariaLabel": "Emlak Görsel Galerisi",
+    "image1Alt": "Bir konut biriminin modern iç tasarımı",
+    "image2Alt": "Modern oturma odası",
+    "image3Alt": "Modern mutfak",
+    "image4Alt": "Aydınlık, minimal iç mekan",
+    "image5Alt": "Modern yatak odası"
   }
 }

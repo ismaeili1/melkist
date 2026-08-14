@@ -165,5 +165,27 @@
       "description": "اعرض عقارك أو مشروعك أو خدمتك المتخصصة ضمن منظومة MELKIST.",
       "consultAction": "طلب استشارة"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول إلى ملکیست",
+      "emailLabel": "البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "submit": "تسجيل الدخول",
+      "submitting": "جارٍ تسجيل الدخول..."
+    },
+    "register": {
+      "title": "إنشاء حساب في ملکیست",
+      "firstNameLabel": "الاسم الأول",
+      "lastNameLabel": "اسم العائلة",
+      "emailLabel": "البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "submit": "إنشاء حساب",
+      "submitting": "جارٍ إنشاء الحساب..."
+    },
+    "errors": {
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+      "registrationFailed": "فشل إنشاء الحساب. يرجى المحاولة مرة أخرى."
+    }
   }
 }

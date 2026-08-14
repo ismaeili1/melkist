@@ -165,5 +165,27 @@
       "description": "List your property, project, or specialized service in the MELKIST ecosystem.",
       "consultAction": "Request Consultation"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Log in to Melkist",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Log In",
+      "submitting": "Logging in..."
+    },
+    "register": {
+      "title": "Sign up for Melkist",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Sign Up",
+      "submitting": "Signing up..."
+    },
+    "errors": {
+      "invalidCredentials": "Incorrect email or password.",
+      "registrationFailed": "Registration failed. Please try again."
+    }
   }
 }

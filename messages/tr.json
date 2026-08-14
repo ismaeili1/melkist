@@ -165,5 +165,27 @@
       "description": "Emlağınızı, projenizi veya uzmanlık hizmetinizi MELKIST ekosisteminde tanıtın.",
       "consultAction": "Danışmanlık Talep Et"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Melkist'e Giriş Yap",
+      "emailLabel": "E-posta",
+      "passwordLabel": "Şifre",
+      "submit": "Giriş Yap",
+      "submitting": "Giriş yapılıyor..."
+    },
+    "register": {
+      "title": "Melkist'e Kayıt Ol",
+      "firstNameLabel": "Ad",
+      "lastNameLabel": "Soyad",
+      "emailLabel": "E-posta",
+      "passwordLabel": "Şifre",
+      "submit": "Kayıt Ol",
+      "submitting": "Kayıt olunuyor..."
+    },
+    "errors": {
+      "invalidCredentials": "E-posta veya şifre hatalı.",
+      "registrationFailed": "Kayıt başarısız oldu. Lütfen tekrar deneyin."
+    }
   }
 }

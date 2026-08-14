@@ -165,5 +165,27 @@
       "description": "ملک، پروژه یا خدمت تخصصی خود را در اکوسیستم MELKIST معرفی کنید.",
       "consultAction": "درخواست مشاوره"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "ورود به MELKIST",
+      "emailLabel": "ایمیل",
+      "passwordLabel": "رمز عبور",
+      "submit": "ورود",
+      "submitting": "در حال ورود..."
+    },
+    "register": {
+      "title": "ثبت‌نام در MELKIST",
+      "firstNameLabel": "نام",
+      "lastNameLabel": "نام خانوادگی",
+      "emailLabel": "ایمیل",
+      "passwordLabel": "رمز عبور",
+      "submit": "ثبت‌نام",
+      "submitting": "در حال ثبت‌نام..."
+    },
+    "errors": {
+      "invalidCredentials": "ایمیل یا رمز عبور اشتباه است.",
+      "registrationFailed": "ثبت‌نام با خطا مواجه شد. لطفاً دوباره تلاش کنید."
+    }
   }
 }

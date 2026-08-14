@@ -1,26 +1,28 @@
-interface EmailFieldProps {
-  value: string;
-  onChange: (value: string) => void;
+import { forwardRef } from "react";
+
+interface EmailFieldProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
+  label: string;
+  error?: string;
 }
 
-export default function EmailField({
-  value,
-  onChange,
-}: EmailFieldProps) {
-  return (
-    <div className="field">
-      <label htmlFor="email">
-        ایمیل
-      </label>
+const EmailField = forwardRef<HTMLInputElement, EmailFieldProps>(
+  function EmailField({ label, error, id = "email", ...rest }, ref) {
+    return (
+      <div className="field">
+        <label htmlFor={id}>{label}</label>
+        <input
+          id={id}
+          type="email"
+          autoComplete="email"
+          placeholder="example@email.com"
+          ref={ref}
+          {...rest}
+        />
+        {error && <p role="alert">{error}</p>}
+      </div>
+    );
+  },
+);
 
-      <input
-        id="email"
-        type="email"
-        autoComplete="email"
-        value={value}
-        placeholder="example@email.com"
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </div>
-  );
-}
+export default EmailField;

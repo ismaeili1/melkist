@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { mainNavigation } from "@/components/navigation/navigation.config";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import styles from "./SiteHeader.module.css";
 
 export interface MobileNavigationProps {
@@ -79,6 +80,10 @@ export function MobileNavigation({ open, onClose }: MobileNavigationProps) {
           >
             ×
           </button>
+        </div>
+
+        <div className={styles.mobileNavigationLanguage}>
+          <LanguageSwitcher />
         </div>
 
         <ul className={styles.mobileNavigationList}>

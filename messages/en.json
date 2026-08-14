@@ -95,6 +95,36 @@
       "title": "Projects Built for the Future",
       "description": "Explore construction, development, and selected investment opportunities for review and participation.",
       "primaryAction": "View Projects"
+    },
+    "buySell": {
+      "eyebrow": "Buy & Sell Property",
+      "title": "Find the Right Property for You",
+      "description": "Search and explore buying and selling opportunities with structured, reliable information.",
+      "primaryAction": "Start Searching Properties"
+    },
+    "rent": {
+      "eyebrow": "Rent & Mortgage",
+      "title": "The Right Space to Live and Work",
+      "description": "An easier way to search for rentals and mortgages on apartments, villas, offices, shops, and more.",
+      "primaryAction": "Search Rental Properties"
+    },
+    "investment": {
+      "eyebrow": "Partnership & Investment",
+      "title": "Find Value-Creating Opportunities",
+      "description": "Explore construction partnership and investment opportunities in real estate and building projects.",
+      "primaryAction": "View Opportunities"
+    },
+    "consulting": {
+      "eyebrow": "MELKIST Consulting Services",
+      "title": "Better Decisions, Backed by Clarity",
+      "description": "Specialized consulting services to help you review, analyze, and decide on property, construction, and investment matters.",
+      "primaryAction": "Request Consultation"
+    },
+    "architecture": {
+      "eyebrow": "Architecture & Construction Services",
+      "title": "From Idea to Project Execution",
+      "description": "Architectural design, interior design, facade, landscape, supervision, execution, renovation, and specialized visualization services.",
+      "primaryAction": "View Architecture Services"
     }
   },
   "home": {

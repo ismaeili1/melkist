@@ -1,21 +1,18 @@
-
+import { getTranslations } from "next-intl/server";
 import { RoutePlaceholder } from "@/components/navigation/RoutePlaceholder";
 
-export default function RentPage() {
-  return (
-    <>
-      
+export default async function PlaceholderPage() {
+  const t = await getTranslations("placeholders.rent");
 
-      <RoutePlaceholder
-        data={{
-          eyebrow: "رهن و اجاره",
-          title: "فضای مناسب برای زندگی و کار",
-          description:
-            "جست‌وجوی ساده‌تر برای رهن و اجاره آپارتمان، ویلا، دفتر، فروشگاه و سایر املاک.",
-          primaryAction: "جست‌وجوی املاک اجاره‌ای",
-          primaryHref: "/property",
-        }}
-      />
-    </>
+  return (
+    <RoutePlaceholder
+      data={{
+        eyebrow: t("eyebrow"),
+        title: t("title"),
+        description: t("description"),
+        primaryAction: t("primaryAction"),
+        primaryHref: "/property",
+      }}
+    />
   );
 }

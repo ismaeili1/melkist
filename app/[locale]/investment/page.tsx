@@ -1,21 +1,18 @@
-
+import { getTranslations } from "next-intl/server";
 import { RoutePlaceholder } from "@/components/navigation/RoutePlaceholder";
 
-export default function InvestmentPage() {
-  return (
-    <>
-      
+export default async function PlaceholderPage() {
+  const t = await getTranslations("placeholders.investment");
 
-      <RoutePlaceholder
-        data={{
-          eyebrow: "مشارکت و سرمایه‌گذاری",
-          title: "فرصت‌های ارزش‌آفرین را پیدا کنید",
-          description:
-            "بررسی فرصت‌های مشارکت در ساخت و سرمایه‌گذاری در پروژه‌های ملکی و ساختمانی.",
-          primaryAction: "مشاهده فرصت‌ها",
-          primaryHref: "/projects",
-        }}
-      />
-    </>
+  return (
+    <RoutePlaceholder
+      data={{
+        eyebrow: t("eyebrow"),
+        title: t("title"),
+        description: t("description"),
+        primaryAction: t("primaryAction"),
+        primaryHref: "/projects",
+      }}
+    />
   );
 }

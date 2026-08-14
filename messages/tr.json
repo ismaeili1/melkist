@@ -95,6 +95,36 @@
       "title": "Geleceği İnşa Eden Projeler",
       "description": "İnceleme ve katılım için seçilmiş inşaat, geliştirme ve yatırım fırsatlarını keşfedin.",
       "primaryAction": "Projeleri Görüntüle"
+    },
+    "buySell": {
+      "eyebrow": "Emlak Alım Satımı",
+      "title": "Size Uygun Emlağı Bulun",
+      "description": "Yapılandırılmış ve güvenilir bilgilerle alım satım fırsatlarını arayın ve keşfedin.",
+      "primaryAction": "Emlak Aramaya Başla"
+    },
+    "rent": {
+      "eyebrow": "Kiralama ve İpotek",
+      "title": "Yaşamak ve Çalışmak İçin Doğru Alan",
+      "description": "Daire, villa, ofis, mağaza ve diğer gayrimenkuller için kiralama ve ipotek aramanın daha kolay yolu.",
+      "primaryAction": "Kiralık Emlak Ara"
+    },
+    "investment": {
+      "eyebrow": "Ortaklık ve Yatırım",
+      "title": "Değer Yaratan Fırsatları Bulun",
+      "description": "Gayrimenkul ve inşaat projelerinde ortaklık ve yatırım fırsatlarını keşfedin.",
+      "primaryAction": "Fırsatları Görüntüle"
+    },
+    "consulting": {
+      "eyebrow": "MELKIST Danışmanlık Hizmetleri",
+      "title": "Netlikle Desteklenen Daha İyi Kararlar",
+      "description": "Emlak, inşaat ve yatırım konularında inceleme, analiz ve karar vermenize yardımcı olacak uzman danışmanlık hizmetleri.",
+      "primaryAction": "Danışmanlık Talep Et"
+    },
+    "architecture": {
+      "eyebrow": "Mimarlık ve İnşaat Hizmetleri",
+      "title": "Fikirden Proje Uygulamasına",
+      "description": "Mimari tasarım, iç mimari, cephe, peyzaj, denetim, uygulama, tadilat ve uzman görselleştirme hizmetleri.",
+      "primaryAction": "Mimarlık Hizmetlerini Görüntüle"
     }
   },
   "home": {

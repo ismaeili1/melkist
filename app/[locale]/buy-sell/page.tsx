@@ -1,21 +1,18 @@
-
+import { getTranslations } from "next-intl/server";
 import { RoutePlaceholder } from "@/components/navigation/RoutePlaceholder";
 
-export default function BuySellPage() {
-  return (
-    <>
-      
+export default async function PlaceholderPage() {
+  const t = await getTranslations("placeholders.buySell");
 
-      <RoutePlaceholder
-        data={{
-          eyebrow: "خرید و فروش ملک",
-          title: "ملک مناسب خود را پیدا کنید",
-          description:
-            "جست‌وجو و بررسی فرصت‌های خرید و فروش ملک با اطلاعات ساختاریافته و قابل اعتماد.",
-          primaryAction: "شروع جست‌وجوی ملک",
-          primaryHref: "/property",
-        }}
-      />
-    </>
+  return (
+    <RoutePlaceholder
+      data={{
+        eyebrow: t("eyebrow"),
+        title: t("title"),
+        description: t("description"),
+        primaryAction: t("primaryAction"),
+        primaryHref: "/property",
+      }}
+    />
   );
 }

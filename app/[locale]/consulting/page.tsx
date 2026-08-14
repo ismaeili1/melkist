@@ -1,21 +1,18 @@
-
+import { getTranslations } from "next-intl/server";
 import { RoutePlaceholder } from "@/components/navigation/RoutePlaceholder";
 
-export default function ConsultingPage() {
-  return (
-    <>
-      
+export default async function PlaceholderPage() {
+  const t = await getTranslations("placeholders.consulting");
 
-      <RoutePlaceholder
-        data={{
-          eyebrow: "خدمات مشاوره MELKIST",
-          title: "تصمیم بهتر، با شناخت دقیق‌تر",
-          description:
-            "خدمات مشاوره تخصصی برای بررسی، تحلیل و تصمیم‌گیری در حوزه ملک، ساختمان و سرمایه‌گذاری.",
-          primaryAction: "درخواست مشاوره",
-          primaryHref: "/consulting",
-        }}
-      />
-    </>
+  return (
+    <RoutePlaceholder
+      data={{
+        eyebrow: t("eyebrow"),
+        title: t("title"),
+        description: t("description"),
+        primaryAction: t("primaryAction"),
+        primaryHref: "/consulting",
+      }}
+    />
   );
 }

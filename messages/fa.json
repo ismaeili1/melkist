@@ -230,5 +230,23 @@
     "image3Alt": "آشپزخانه مدرن",
     "image4Alt": "فضای داخلی روشن و مینیمال",
     "image5Alt": "اتاق خواب مدرن"
+  },
+  "dashboard": {
+    "title": "داشبورد MELKIST",
+    "welcome": "خوش آمدید {email}"
+  },
+  "settings": {
+    "alerts": {
+      "loading": "در حال بارگذاری تنظیمات اعلان‌ها...",
+      "title": "تنظیمات اعلان‌ها",
+      "description": "نحوه دریافت اعلان‌های مربوط به جستجوهای ذخیره‌شده خود را مدیریت کنید.",
+      "enableLabel": "فعال‌سازی اعلان‌های ملکی",
+      "frequencyLabel": "فرکانس اعلان‌ها",
+      "frequencyInstant": "فوری",
+      "frequencyDailyDigest": "خلاصه روزانه",
+      "inAppLabel": "اعلان داخل سایت",
+      "emailLabel": "اعلان ایمیلی",
+      "pushLabel": "اعلان Push"
+    }
   }
 }

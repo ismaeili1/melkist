@@ -1,20 +1,14 @@
-import {
-  requireAuth,
-} from "@/lib/auth/guards/requireAuth";
+import { getTranslations } from "next-intl/server";
+import { requireAuth } from "@/lib/auth/guards/requireAuth";
 
 export default async function DashboardPage() {
-  const user =
-    await requireAuth();
+  const user = await requireAuth();
+  const t = await getTranslations("dashboard");
 
   return (
     <main>
-      <h1>
-        داشبورد MELKIST
-      </h1>
-
-      <p>
-        خوش آمدید {user.email}
-      </p>
+      <h1>{t("title")}</h1>
+      <p>{t("welcome", { email: user.email })}</p>
     </main>
   );
 }

@@ -230,5 +230,23 @@
     "image3Alt": "Modern kitchen",
     "image4Alt": "Bright, minimal interior space",
     "image5Alt": "Modern bedroom"
+  },
+  "dashboard": {
+    "title": "MELKIST Dashboard",
+    "welcome": "Welcome, {email}"
+  },
+  "settings": {
+    "alerts": {
+      "loading": "Loading notification settings...",
+      "title": "Alert Settings",
+      "description": "Manage how you receive notifications about your saved searches.",
+      "enableLabel": "Enable property alerts",
+      "frequencyLabel": "Alert frequency",
+      "frequencyInstant": "Instant",
+      "frequencyDailyDigest": "Daily digest",
+      "inAppLabel": "In-app notification",
+      "emailLabel": "Email notification",
+      "pushLabel": "Push notification"
+    }
   }
 }

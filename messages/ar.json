@@ -230,5 +230,23 @@
     "image3Alt": "مطبخ عصري",
     "image4Alt": "مساحة داخلية مضيئة وبسيطة",
     "image5Alt": "غرفة نوم عصرية"
+  },
+  "dashboard": {
+    "title": "لوحة تحكم MELKIST",
+    "welcome": "مرحبًا، {email}"
+  },
+  "settings": {
+    "alerts": {
+      "loading": "جارٍ تحميل إعدادات التنبيهات...",
+      "title": "إعدادات التنبيهات",
+      "description": "أدر كيفية تلقي الإشعارات المتعلقة بعمليات البحث المحفوظة الخاصة بك.",
+      "enableLabel": "تفعيل تنبيهات العقارات",
+      "frequencyLabel": "تكرار التنبيهات",
+      "frequencyInstant": "فوري",
+      "frequencyDailyDigest": "ملخص يومي",
+      "inAppLabel": "إشعار داخل التطبيق",
+      "emailLabel": "إشعار بريد إلكتروني",
+      "pushLabel": "إشعار Push"
+    }
   }
 }

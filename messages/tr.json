@@ -230,5 +230,23 @@
     "image3Alt": "Modern mutfak",
     "image4Alt": "Aydınlık, minimal iç mekan",
     "image5Alt": "Modern yatak odası"
+  },
+  "dashboard": {
+    "title": "MELKIST Paneli",
+    "welcome": "Hoş geldiniz, {email}"
+  },
+  "settings": {
+    "alerts": {
+      "loading": "Bildirim ayarları yükleniyor...",
+      "title": "Uyarı Ayarları",
+      "description": "Kayıtlı aramalarınızla ilgili bildirimleri nasıl alacağınızı yönetin.",
+      "enableLabel": "Emlak uyarılarını etkinleştir",
+      "frequencyLabel": "Uyarı sıklığı",
+      "frequencyInstant": "Anında",
+      "frequencyDailyDigest": "Günlük özet",
+      "inAppLabel": "Uygulama içi bildirim",
+      "emailLabel": "E-posta bildirimi",
+      "pushLabel": "Push bildirimi"
+    }
   }
 }

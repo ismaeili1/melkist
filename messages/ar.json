@@ -248,5 +248,22 @@
       "emailLabel": "إشعار بريد إلكتروني",
       "pushLabel": "إشعار Push"
     }
+  },
+  "favorites": {
+    "eyebrow": "MELKIST SAVED",
+    "title": "العقارات المحفوظة",
+    "description": "أدر العقارات التي حفظتها للمراجعة والمتابعة لاحقًا.",
+    "loading": "جارٍ تحميل العقارات المحفوظة...",
+    "countLabel": "عقار محفوظ",
+    "emptyTitle": "لم تحفظ أي عقار بعد",
+    "emptyDescription": "أثناء تصفح العقارات، اختر خيار الحفظ لتظهر عقاراتك المفضلة هنا.",
+    "exploreButton": "عرض العقارات"
+  },
+  "propertyCard": {
+    "featuredBadge": "مميز",
+    "areaUnit": "م²",
+    "bedroomsUnit": "غرفة نوم",
+    "viewButton": "عرض العقار",
+    "citySeparator": "، "
   }
 }

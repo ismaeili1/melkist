@@ -248,5 +248,22 @@
       "emailLabel": "Email notification",
       "pushLabel": "Push notification"
     }
+  },
+  "favorites": {
+    "eyebrow": "MELKIST SAVED",
+    "title": "Saved Properties",
+    "description": "Manage the properties you've saved for further review and follow-up.",
+    "loading": "Loading saved properties...",
+    "countLabel": "saved properties",
+    "emptyTitle": "You haven't saved any properties yet",
+    "emptyDescription": "While browsing properties, choose the save option so your favorite properties appear here.",
+    "exploreButton": "View Properties"
+  },
+  "propertyCard": {
+    "featuredBadge": "Featured",
+    "areaUnit": "sqm",
+    "bedroomsUnit": "bed",
+    "viewButton": "View Property",
+    "citySeparator": ", "
   }
 }

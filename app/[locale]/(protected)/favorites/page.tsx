@@ -1,35 +1,11 @@
+import { propertyResults } from "@/app/[locale]/property/property-data";
+import { SavedProperties } from "./components/SavedProperties";
 import styles from "./favorites.module.css";
 
 export default function FavoritesPage() {
   return (
-    <main
-      className={
-        styles.page
-      }
-    >
-      <section
-        className={
-          styles.hero
-        }
-      >
-        <span
-          className={
-            styles.eyebrow
-          }
-        >
-          MELKIST SAVED
-        </span>
-
-        <h1>
-          املاک ذخیره‌شده
-        </h1>
-
-        <p>
-          ملک‌هایی که برای بررسی
-          بیشتر ذخیره کرده‌اید،
-          در این بخش قرار می‌گیرند.
-        </p>
-      </section>
+    <main className={styles.page}>
+      <SavedProperties properties={propertyResults} />
     </main>
   );
 }

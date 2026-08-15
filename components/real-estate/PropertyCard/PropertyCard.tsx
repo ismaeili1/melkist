@@ -1,11 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
-import {
-  FavoriteButton,
-} from "@/components/real-estate/FavoriteButton";
-
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { FavoriteButton } from "@/components/real-estate/FavoriteButton";
 import styles from "./PropertyCard.module.css";
 
 export type PropertyCardData = {
@@ -25,23 +22,16 @@ export type PropertyCardData = {
 
 type PropertyCardProps = {
   property: PropertyCardData;
-
-  onFavoriteChange?: (
-    isFavorite: boolean,
-  ) => void;
+  onFavoriteChange?: (isFavorite: boolean) => void;
 };
 
-export function PropertyCard({
-  property,
-  onFavoriteChange,
-}: PropertyCardProps) {
+export function PropertyCard({ property, onFavoriteChange }: PropertyCardProps) {
+  const t = useTranslations("propertyCard");
+
   return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Link
-          href={`/property/${property.id}`}
-          className={styles.cardLink}
-        >
+        <Link href={`/property/${property.id}`} className={styles.cardLink}>
           <img
             src={property.image}
             alt={property.title}
@@ -50,57 +40,45 @@ export function PropertyCard({
 
           {property.featured && (
             <span className={styles.featuredBadge}>
-              منتخب
+              {t("featuredBadge")}
             </span>
           )}
         </Link>
 
         <div className={styles.favoriteButton}>
-          <FavoriteButton
-            propertyId={property.id}
-            onChange={onFavoriteChange}
-          />
+          <FavoriteButton propertyId={property.id} onChange={onFavoriteChange} />
         </div>
       </div>
 
-      <Link
-        href={`/property/${property.id}`}
-        className={styles.cardLink}
-      >
+      <Link href={`/property/${property.id}`} className={styles.cardLink}>
         <div className={styles.cardBody}>
           <div className={styles.cardMeta}>
             <span>{property.type}</span>
-
             <span>{property.transaction}</span>
           </div>
 
-          <h2 className={styles.cardTitle}>
-            {property.title}
-          </h2>
+          <h2 className={styles.cardTitle}>{property.title}</h2>
 
           <p className={styles.location}>
-            {property.city}، {property.district}،{" "}
+            {property.city}
+            {t("citySeparator")}
+            {property.district}
+            {t("citySeparator")}
             {property.neighborhood}
           </p>
 
           <div className={styles.specifications}>
             <span>
-              {property.area} متر
+              {property.area} {t("areaUnit")}
             </span>
-
             <span>
-              {property.bedrooms} خواب
+              {property.bedrooms} {t("bedroomsUnit")}
             </span>
           </div>
 
           <div className={styles.cardFooter}>
-            <strong>
-              {property.price}
-            </strong>
-
-            <span className={styles.viewButton}>
-              مشاهده ملک
-            </span>
+            <strong>{property.price}</strong>
+            <span className={styles.viewButton}>{t("viewButton")}</span>
           </div>
         </div>
       </Link>

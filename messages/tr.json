@@ -248,5 +248,22 @@
       "emailLabel": "E-posta bildirimi",
       "pushLabel": "Push bildirimi"
     }
+  },
+  "favorites": {
+    "eyebrow": "MELKIST SAVED",
+    "title": "Kaydedilen Emlaklar",
+    "description": "İncelemek ve takip etmek için kaydettiğiniz emlakları yönetin.",
+    "loading": "Kaydedilen emlaklar yükleniyor...",
+    "countLabel": "kaydedilen emlak",
+    "emptyTitle": "Henüz bir emlak kaydetmediniz",
+    "emptyDescription": "Emlaklara göz atarken, favori emlaklarınızın burada görünmesi için kaydet seçeneğini seçin.",
+    "exploreButton": "Emlakları Görüntüle"
+  },
+  "propertyCard": {
+    "featuredBadge": "Öne Çıkan",
+    "areaUnit": "m²",
+    "bedroomsUnit": "yatak odası",
+    "viewButton": "Emlağı Görüntüle",
+    "citySeparator": ", "
   }
 }

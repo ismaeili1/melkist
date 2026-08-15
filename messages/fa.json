@@ -248,5 +248,22 @@
       "emailLabel": "اعلان ایمیلی",
       "pushLabel": "اعلان Push"
     }
+  },
+  "favorites": {
+    "eyebrow": "MELKIST SAVED",
+    "title": "املاک ذخیره‌شده",
+    "description": "املاک مورد علاقه خود را برای بررسی و پیگیری بعدی مدیریت کنید.",
+    "loading": "در حال بارگذاری املاک ذخیره‌شده...",
+    "countLabel": "ملک ذخیره‌شده",
+    "emptyTitle": "هنوز ملکی ذخیره نکرده‌اید",
+    "emptyDescription": "هنگام بررسی املاک، گزینه ذخیره را انتخاب کنید تا ملک‌های مورد علاقه شما در اینجا نمایش داده شوند.",
+    "exploreButton": "مشاهده املاک"
+  },
+  "propertyCard": {
+    "featuredBadge": "منتخب",
+    "areaUnit": "متر",
+    "bedroomsUnit": "خواب",
+    "viewButton": "مشاهده ملک",
+    "citySeparator": "، "
   }
 }

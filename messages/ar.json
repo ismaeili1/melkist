@@ -279,5 +279,9 @@
     "searchNameLabel": "اسم البحث",
     "cancel": "إلغاء",
     "saveChanges": "حفظ التغييرات"
+  },
+  "propertyCreate": {
+    "title": "إضافة عقار",
+    "description": "سيتم تطوير نموذج إضافة العقار في مرحلة لاحقة."
   }
 }

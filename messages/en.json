@@ -279,5 +279,9 @@
     "searchNameLabel": "Search Name",
     "cancel": "Cancel",
     "saveChanges": "Save Changes"
+  },
+  "propertyCreate": {
+    "title": "List a Property",
+    "description": "The property listing form will be developed in a future stage."
   }
 }

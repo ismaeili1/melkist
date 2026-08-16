@@ -279,5 +279,9 @@
     "searchNameLabel": "نام جستجو",
     "cancel": "انصراف",
     "saveChanges": "ذخیره تغییرات"
+  },
+  "propertyCreate": {
+    "title": "ثبت ملک",
+    "description": "فرم ثبت ملک در مرحله بعدی توسعه خواهد یافت."
   }
 }

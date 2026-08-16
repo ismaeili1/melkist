@@ -279,5 +279,9 @@
     "searchNameLabel": "Arama Adı",
     "cancel": "İptal",
     "saveChanges": "Değişiklikleri Kaydet"
+  },
+  "propertyCreate": {
+    "title": "Emlak İlanı Ver",
+    "description": "Emlak ilan formu ileriki bir aşamada geliştirilecektir."
   }
 }

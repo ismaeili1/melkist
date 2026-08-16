@@ -1,4 +1,8 @@
-export default function CreatePropertyPage() {
+import { getTranslations } from "next-intl/server";
+
+export default async function CreatePropertyPage() {
+  const t = await getTranslations("propertyCreate");
+
   return (
     <main
       style={{
@@ -6,11 +10,8 @@ export default function CreatePropertyPage() {
         padding: "48px 24px",
       }}
     >
-      <h1>ثبت ملک</h1>
-
-      <p>
-        فرم ثبت ملک در مرحله بعدی توسعه خواهد یافت.
-      </p>
+      <h1>{t("title")}</h1>
+      <p>{t("description")}</p>
     </main>
   );
 }

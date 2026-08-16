@@ -265,5 +265,19 @@
     "bedroomsUnit": "خواب",
     "viewButton": "مشاهده ملک",
     "citySeparator": "، "
+  },
+  "savedSearches": {
+    "loading": "در حال بارگذاری...",
+    "lastUpdated": "آخرین به‌روزرسانی:",
+    "minAreaLabel": "حداقل",
+    "areaUnit": "متر",
+    "runSearch": "اجرای جستجو",
+    "editFilters": "ویرایش فیلترها",
+    "rename": "تغییر نام",
+    "delete": "حذف",
+    "renameTitle": "تغییر نام جستجو",
+    "searchNameLabel": "نام جستجو",
+    "cancel": "انصراف",
+    "saveChanges": "ذخیره تغییرات"
   }
 }

@@ -1,21 +1,13 @@
 "use client";
 
-import {
-  useState,
-} from "react";
-
-import type {
-  SavedSearch,
-} from "@/lib/saved-searches";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import type { SavedSearch } from "@/lib/saved-searches";
 
 type EditSavedSearchModalProps = {
   search: SavedSearch;
-
   onClose: () => void;
-
-  onSave: (
-    name: string,
-  ) => void;
+  onSave: (name: string) => void;
 };
 
 export function EditSavedSearchModal({
@@ -23,18 +15,13 @@ export function EditSavedSearchModal({
   onClose,
   onSave,
 }: EditSavedSearchModalProps) {
-  const [
-    name,
-    setName,
-  ] = useState(search.name);
+  const t = useTranslations("savedSearches");
+  const [name, setName] = useState(search.name);
 
-  function handleSubmit(
-    event: React.FormEvent<HTMLFormElement>,
-  ) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const trimmed =
-      name.trim();
+    const trimmed = name.trim();
 
     if (!trimmed) {
       return;
@@ -47,55 +34,29 @@ export function EditSavedSearchModal({
     <div
       role="presentation"
       onMouseDown={(event) => {
-        if (
-          event.target ===
-          event.currentTarget
-        ) {
+        if (event.target === event.currentTarget) {
           onClose();
         }
       }}
     >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="rename-title"
-      >
-        <h2 id="rename-title">
-          تغییر نام جستجو
-        </h2>
+      <div role="dialog" aria-modal="true" aria-labelledby="rename-title">
+        <h2 id="rename-title">{t("renameTitle")}</h2>
 
-        <form
-          onSubmit={
-            handleSubmit
-          }
-        >
+        <form onSubmit={handleSubmit}>
           <label>
-            نام جستجو
-
+            {t("searchNameLabel")}
             <input
               value={name}
-              onChange={(event) =>
-                setName(
-                  event.target
-                    .value,
-                )
-              }
+              onChange={(event) => setName(event.target.value)}
               autoFocus
             />
           </label>
 
-          <button
-            type="button"
-            onClick={onClose}
-          >
-            انصراف
+          <button type="button" onClick={onClose}>
+            {t("cancel")}
           </button>
 
-          <button
-            type="submit"
-          >
-            ذخیره تغییرات
-          </button>
+          <button type="submit">{t("saveChanges")}</button>
         </form>
       </div>
     </div>

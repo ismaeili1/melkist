@@ -265,5 +265,19 @@
     "bedroomsUnit": "yatak odası",
     "viewButton": "Emlağı Görüntüle",
     "citySeparator": ", "
+  },
+  "savedSearches": {
+    "loading": "Yükleniyor...",
+    "lastUpdated": "Son güncelleme:",
+    "minAreaLabel": "Min",
+    "areaUnit": "m²",
+    "runSearch": "Aramayı Çalıştır",
+    "editFilters": "Filtreleri Düzenle",
+    "rename": "Yeniden Adlandır",
+    "delete": "Sil",
+    "renameTitle": "Aramayı Yeniden Adlandır",
+    "searchNameLabel": "Arama Adı",
+    "cancel": "İptal",
+    "saveChanges": "Değişiklikleri Kaydet"
   }
 }

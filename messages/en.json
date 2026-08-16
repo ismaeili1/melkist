@@ -265,5 +265,19 @@
     "bedroomsUnit": "bed",
     "viewButton": "View Property",
     "citySeparator": ", "
+  },
+  "savedSearches": {
+    "loading": "Loading...",
+    "lastUpdated": "Last updated:",
+    "minAreaLabel": "Min",
+    "areaUnit": "sqm",
+    "runSearch": "Run Search",
+    "editFilters": "Edit Filters",
+    "rename": "Rename",
+    "delete": "Delete",
+    "renameTitle": "Rename Search",
+    "searchNameLabel": "Search Name",
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes"
   }
 }

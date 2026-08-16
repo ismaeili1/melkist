@@ -265,5 +265,19 @@
     "bedroomsUnit": "غرفة نوم",
     "viewButton": "عرض العقار",
     "citySeparator": "، "
+  },
+  "savedSearches": {
+    "loading": "جارٍ التحميل...",
+    "lastUpdated": "آخر تحديث:",
+    "minAreaLabel": "الحد الأدنى",
+    "areaUnit": "م²",
+    "runSearch": "تشغيل البحث",
+    "editFilters": "تعديل الفلاتر",
+    "rename": "إعادة تسمية",
+    "delete": "حذف",
+    "renameTitle": "إعادة تسمية البحث",
+    "searchNameLabel": "اسم البحث",
+    "cancel": "إلغاء",
+    "saveChanges": "حفظ التغييرات"
   }
 }
